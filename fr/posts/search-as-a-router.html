@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Quand le meilleur résultat de recherche n'est pas un résultat — Leon Sun</title>
+    <meta
+      name="description"
+      content="Sur une plateforme de services automobiles, le meilleur dénouement pour une bonne part des requêtes était de faire sortir l'utilisateur de la recherche. Le plus difficile n'avait rien à voir avec la technologie."
+    />
+    <meta name="color-scheme" content="light dark" />
+
+    <meta property="og:title" content="Quand le meilleur résultat de recherche n'est pas un résultat" />
+    <meta
+      property="og:description"
+      content="La recherche comme aiguillage, non comme étagère — et le problème d'attribution qui a rendu la chose possible."
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="fr_CA" />
+
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="alternate" hreflang="en" href="../../posts/search-as-a-router.html" />
+    <link rel="alternate" hreflang="fr" href="search-as-a-router.html" />
+    <link rel="icon" href="data:," />
+    <script>
+      try {
+        var t = localStorage.getItem("theme");
+        if (t) document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    </script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Aller au contenu</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="wordmark" href="../index.html">Leon Sun</a>
+
+        <nav class="nav" id="site-nav" aria-label="Principale">
+          <a href="../work.html">Projets</a>
+          <a href="../writing.html">Textes</a>
+          <a href="../about.html">À propos</a>
+        </nav>
+
+        <div class="site-header__actions">
+          <span class="lang-switch">
+            <a href="../../posts/search-as-a-router.html" lang="en" hreflang="en">EN</a>
+            <span class="lang-switch__sep" aria-hidden="true">/</span>
+            <a href="search-as-a-router.html" aria-current="true" lang="fr" hreflang="fr">FR</a>
+          </span>
+
+          <a class="icon-link" href="https://github.com/Leon-sun" target="_blank" rel="me noopener" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a>
+          <a class="icon-link" href="https://www.linkedin.com/in/xiangxin-sun-100bb347" target="_blank" rel="me noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
+
+          <button class="theme-toggle" type="button" aria-label="Changer de thème" title="Changer de thème"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" /></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" /></svg></button>
+
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu" title="Menu"><svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" /></svg><svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" /></svg></button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <article class="article wrap">
+        <a class="back-link" href="../writing.html">&larr; Tous les textes</a>
+
+        <header class="article__header">
+          <p class="article__meta">Août 2026 &middot; 14 min de lecture</p>
+          <h1>Quand le meilleur résultat de recherche n'est pas un résultat</h1>
+        </header>
+
+        <div class="article__body">
+          <p>La plupart des équipes de recherche en commerce électronique optimisent vers un seul objectif&nbsp;: mettre le bon produit devant l'utilisateur, plus vite. Meilleur rappel, meilleur classement, meilleure page de résultats. C'est un bon objectif, et pour la plupart des catalogues, c'est le bon.</p>
+
+          <p>De 2018 à 2020, j'étais gestionnaire de produit responsable de la recherche au sein de l'équipe produit d'une plateforme de services automobiles, et la chose la plus utile que nous ayons faite a été de décider que cet objectif était le mauvais pour nous &mdash; que pour une bonne part des requêtes, le meilleur dénouement était de faire sortir l'utilisateur <em>de</em> la recherche.</p>
+
+          <p>Cela ressemble à un aveu d'échec. C'était le contraire, et le plus difficile n'avait rien à voir avec la technologie de recherche.</p>
+
+          <h2>Pourquoi la recette habituelle ne tenait pas</h2>
+
+          <p>Trois caractéristiques de l'entreprise brisaient les hypothèses sur lesquelles repose la recherche en commerce électronique.</p>
+
+          <p><strong>La fréquence était extrêmement faible.</strong> Les utilisateurs inscrits dépassaient les actifs mensuels de plus d'un ordre de grandeur. Sur la plupart des plateformes, ce ratio est une alarme. Ici, c'était simplement la forme de la catégorie&nbsp;: personne n'achète des pneus comme il achète des vêtements. On achète quand on en a besoin, puis on n'y pense plus pendant deux ans. Le faible engagement n'était pas une fuite à colmater, et tout indicateur qui l'aurait traité ainsi nous aurait fait courir après la mauvaise cible pendant un an.</p>
+
+          <p><strong>Les achats étaient conditionnés par la compatibilité.</strong> On ne peut pas vendre un pneu à quelqu'un sans connaître son véhicule. Une requête pour un produit n'était jamais une demande complète &mdash; c'en était la moitié. La plateforme devait connaître la voiture avant de pouvoir répondre, ce qui rendait l'appariement de mots-clés structurellement incapable de produire un résultat correct, aussi bien réglé soit-il.</p>
+
+          <p><strong>Le catalogue était volontairement peu profond.</strong> Nous ne proposions pas quarante options par catégorie. Nous proposions celles qui avaient du sens pour un véhicule donné. Une page comportant une poignée d'articles ne récompense pas le comportement parcourir-comparer-décider que présuppose l'optimisation du classement.</p>
+
+          <p>Pendant ce temps, les utilisateurs arrivaient avec des habitudes formées sur les grands marchés en ligne généralistes. Ils tapaient ce qu'ils voulaient et s'attendaient à un mur de produits. L'écart entre cette attente et ce que l'entreprise pouvait réellement livrer, voilà le vrai problème&nbsp;; aucune amélioration du classement n'allait le combler.</p>
+
+          <h2>Ce dont nous avons hérité</h2>
+
+          <p>La recherche avait été bâtie comme une copie réduite d'un moteur de commerce électronique généraliste. Le rappel reposait sur l'appariement de mots-clés, sans couche sémantique. Le classement combinait des règles d'affaires, l'historique des ventes et les signaux d'évaluation &mdash; et en pratique, une part appréciable de l'ordonnancement était décidée à la main, par des personnes.</p>
+
+          <p>Ce n'était pas de l'incompétence. C'était une valeur par défaut raisonnable appliquée à une entreprise à laquelle elle ne convenait pas.</p>
+
+          <h2>La recherche comme aiguillage, non comme étagère</h2>
+
+          <p>Le recadrage qui a tout réorganisé&nbsp;: les utilisateurs venaient à la recherche avec un <em>besoin</em>, et sur notre plateforme, un besoin ne pouvait souvent pas être satisfait par une liste de produits, point.</p>
+
+          <p>Deux faits l'ont rendu concret. Notre page de liste de pneus recevait beaucoup plus d'investissement que la recherche et était itérée bien plus souvent &mdash; c'était tout simplement un meilleur endroit pour acheter des pneus que n'importe quelle page de résultats que nous pouvions réalistement construire. Et l'entretien permettait aux utilisateurs de personnaliser le contenu d'un forfait, une interaction que la recherche n'avait aucun moyen de reproduire.</p>
+
+          <p>Alors, quand quelqu'un cherchait «&nbsp;entretien&nbsp;», nous avions deux options. Lui montrer des produits connexes dans une liste générique, ce que la recherche était faite pour faire. Ou reconnaître que l'entretien est un besoin de <em>service</em> et le confier au parcours conçu pour cela.</p>
+
+          <p>Nous avons choisi la seconde et l'avons généralisée. Le travail de la recherche est devenu&nbsp;: comprendre ce dont l'utilisateur a réellement besoin, puis l'envoyer vers la meilleure surface pour ce besoin &mdash; souvent pas la recherche.</p>
+
+          <h2>L'expérimentation d'abord, l'indicateur ensuite</h2>
+
+          <p>Je tiens à être honnête sur l'ordre, parce que ce n'est pas celui dans lequel ces histoires se racontent habituellement.</p>
+
+          <p>Pendant longtemps, j'ai cherché à retenir les utilisateurs sur la page de résultats. C'était l'objectif, et c'était moins un manque d'imagination qu'une conséquence arithmétique&nbsp;: la recherche était évaluée sur ce qui se passait sur la page de résultats, donc un utilisateur qui la quittait comptait comme une perte, et chacune de mes idées était une variante de «&nbsp;le faire rester&nbsp;». Nous sommes restés un bon moment dans cet état.</p>
+
+          <p>Ce qui a rompu l'impasse, c'est d'avoir remarqué combien de requêtes ne pouvaient tout simplement pas être satisfaites par une page de résultats &mdash; pas mal satisfaites&nbsp;: pas satisfaites du tout &mdash; et d'avoir proposé de tester l'aiguillage de quelques-unes ailleurs. Les tests sont revenus très bons. Cela comptait plus que n'importe quel argument que j'aurais pu avancer en réunion, parce que cela transformait une théorie en un chiffre.</p>
+
+          <p>Cela créait aussi un problème évident. Nous venions de démontrer que la meilleure chose que la recherche pouvait faire pour toute une classe de requêtes était précisément celle que notre propre indicateur punissait. Le faire une fois était une belle expérience. Le faire systématiquement était intenable tant que la recherche restait évaluée sur la conversion en page de résultats &mdash; sous une attribution classique, chaque redirection est une conversion offerte à une autre équipe, et à grande échelle, vous avez bâti un dossier convaincant pour la réduction de votre propre budget.</p>
+
+          <p>Nous avons donc porté les exemples à la direction et eu une longue discussion. Elle a accepté la logique, et les exemples ont fait l'essentiel du travail. La recherche est devenue responsable non plus de la conversion sur la page de résultats, mais de la production totale des utilisateurs de la recherche &mdash; taux de conversion et volume d'affaires générés par quiconque était entré par la recherche, peu importe où l'achat s'est finalement conclu. Une fois que c'est ça, le chiffre, l'aiguillage cesse d'être de l'automutilation. La page de liste de pneus qui convertit notre trafic mieux que nous n'est plus une menace&nbsp;; c'est une ressource.</p>
+
+          <p>Il vaut la peine d'être précis sur ce que ce changement était et n'était pas, parce que «&nbsp;une équipe plaide pour un indicateur qu'elle peut atteindre plus facilement&nbsp;» est un soupçon légitime. Ce n'était pas la recherche qui se déchargeait de sa responsabilité. Aiguiller du trafic vers la surface d'une autre équipe ne fonctionne que si cette surface est prête à le recevoir&nbsp;; le nouveau périmètre venait donc avec une obligation&nbsp;: travailler étroitement avec les équipes propriétaires des destinations et leur transmettre tout ce que nous comprenions de l'intention de l'utilisateur, pour que le résultat final soit véritablement meilleur. Nous élargissions la responsabilité de la recherche, nous ne la rétrécissions pas.</p>
+
+          <p>Il y a une vraie tension à mesurer une équipe de recherche sur le revenu, et il faut la nommer&nbsp;: on peut atteindre des cibles de revenu en aiguillant vers les destinations les plus rentables plutôt que vers les bonnes. Le garde-fou consiste à tenir les deux indicateurs à la fois. On peut gonfler le revenu par session en dégradant la qualité de l'appariement, mais le taux de conversion vous trahira, parce que les utilisateurs qui atterrissent au mauvais endroit n'achètent pas. Aucun des deux chiffres n'est sûr seul. Ensemble, ils sont raisonnablement difficiles à manipuler.</p>
+
+          <p>La version généralisable&nbsp;: <strong>la conception de l'attribution détermine quels produits sont constructibles.</strong> Une équipe de recherche évaluée sur la conversion en page de résultats construira une étagère, quoi que ses membres pensent en privé de l'intention. Mais la leçon pratique n'est pas «&nbsp;changez d'abord l'indicateur&nbsp;» &mdash; je n'aurais pas pu. Personne ne vous remet un nouvel indicateur sur la foi d'une hypothèse. On le change avec des preuves&nbsp;: réalisez la petite version de ce que votre indicateur punit, assez peu coûteuse pour que personne n'ait à la bénir comme stratégie, et laissez le résultat porter l'argument que vous ne pouvez pas porter en réunion.</p>
+
+          <h2>Trois types d'intention, trois réponses différentes</h2>
+
+          <p><strong>Les intentions de service sont aiguillées vers l'extérieur.</strong> Une requête «&nbsp;lave-auto&nbsp;» a cessé de renvoyer des produits nettoyants et s'est mise à renvoyer les lave-autos à proximité. Une requête «&nbsp;peinture&nbsp;» a cessé de renvoyer des crayons de retouche et s'est mise à ouvrir le parcours de réservation. Dans chaque cas, l'ancien ensemble de résultats était défendable sur la pertinence des mots-clés et inutile sur l'intention.</p>
+
+          <p><strong>Les intentions claires de produit et de marque sont normalisées et posées.</strong> Une requête nommant une marque et un type de produit précis est sans ambiguïté &mdash; l'utilisateur n'explore pas, il sait. Nous avons cessé de traiter ces cas comme un problème de recherche pour les traiter comme un aiguillage à destination connue&nbsp;: recueillir les attributs requis, envoyer l'utilisateur vers la meilleure page d'arrivée pour cette combinaison.</p>
+
+          <p><strong>Tout le reste demeure, et obtient une meilleure page.</strong> Toutes les requêtes n'ont pas une destination assurée. Celles qui restaient dans la recherche ont reçu une expérience de résultats repensée autour de ce que notre entreprise pouvait réellement répondre, plutôt qu'une copie réduite d'un marché en ligne généraliste.</p>
+
+          <h2>Classer l'intention, sans éclat</h2>
+
+          <p>L'aiguillage ne fonctionne que si l'ensemble des destinations est fini. Un marché en ligne généraliste ne peut pas énumérer ce qu'un utilisateur pourrait vouloir&nbsp;; l'espace des intentions y est ouvert. Le nôtre était l'inverse &mdash; une poignée de services centraux (pneus, entretien, lave-auto, carrosserie) et un ensemble borné de catégories de produits automobiles comme les tapis et les caméras de tableau de bord. Un espace d'intentions fermé peut se traiter avec un dictionnaire plutôt qu'avec un modèle censé généraliser à n'importe quoi.</p>
+
+          <p>Nous en avons donc bâti un&nbsp;: un dictionnaire d'affaires étiquetant les termes par type d'entité &mdash; marque, modèle, service, produit, lieu, magasin. Assemblé par traitement automatique du langage, puis entretenu en continu par des personnes. Cette seconde moitié est la partie ingrate, et c'est elle qui a fait fonctionner l'ensemble. Le vocabulaire automobile est plein de noms de marques qui sont aussi des mots ordinaires, de numéros de modèles qui ressemblent à des fautes de frappe et d'argot régional pour un même service. Un modèle de langue généraliste s'en tire mal. Un dictionnaire de domaine bien tenu s'en tire bien, parce que c'est quelqu'un qui connaît le domaine qui le tient.</p>
+
+          <p>La classification est ensuite devenue largement mécanique. Découper la requête à l'aide du dictionnaire, voir quels types d'entités sont présents, et la combinaison donne l'intention. Une marque plus un type de produit&nbsp;: intention de produit avec page d'arrivée connue. Un terme de service, seul ou avec un lieu&nbsp;: intention de service qui relève d'un parcours de réservation. L'appariement sémantique vers les services centraux se faisait par listes de synonymes dans le dictionnaire &mdash; pas de plongements lexicaux, rien d'astucieux.</p>
+
+          <p>La responsabilité s'est déplacée avec le temps&nbsp;: des personnes assuraient la curation au début, puis, à mesure que le système mûrissait, une part croissante est passée à l'équipe de science des données. Une taxonomie de domaine représente un coût récurrent réel, et prétendre le contraire donnerait une fausse idée de ce que son exploitation exige.</p>
+
+          <p>La leçon que je généraliserais&nbsp;: <strong>vérifiez si votre espace d'intentions est fermé avant de vous tourner vers un classificateur.</strong> S'il l'est, un dictionnaire de domaine bien entretenu bat un modèle sur la précision, le coût et &mdash; surtout &mdash; la capacité de diagnostic. Quand une requête est mal aiguillée, on voit exactement quel terme l'a causé et on corrige ce terme le jour même. Dans un système où un mauvais aiguillage coûte cher, cela vaut énormément.</p>
+
+          <h2>L'aiguillage vous coûte votre instrument de diagnostic</h2>
+
+          <p>Rediriger est un pari asymétrique. Un mauvais résultat de recherche coûte à l'utilisateur un défilement. Une mauvaise redirection le dépose dans un parcours qu'il n'a jamais demandé, et il doit comprendre ce qui s'est passé et en ressortir.</p>
+
+          <p>Pire, l'aiguillage détruit l'instrument que vous utiliseriez normalement pour le détecter. Le taux de clics était notre signal de référence pour les requêtes qui restaient dans la recherche&nbsp;: fort volume et faible taux de clics signifiaient que nous répondions mal. Mais une requête aiguillée n'affiche jamais de page de résultats. Pas de clic, pas de taux de clics &mdash; le diagnostic qui fonctionnait partout ailleurs est indisponible précisément là où l'enjeu est le plus élevé.</p>
+
+          <p>Nous avons donc changé ce que nous surveillions. Pour les termes aiguillés, nous sommes passés à la conversion, comparée de deux façons. Contre la référence propre à la destination, comme déclencheur&nbsp;: si le trafic arrivant au lave-auto par une requête aiguillée convertissait sous ce que le lave-auto convertit normalement, quelque chose clochait dans l'aiguillage. Et contre la conversion issue de la recherche par catégorie, comme lecture plus fine de la question de savoir si l'aiguillage méritait vraiment sa place. Le contrôle grossier vous dit que quelque chose est cassé&nbsp;; le contrôle comparatif vous dit si la chose est bonne.</p>
+
+          <p>Deux choix de conception ont maintenu l'honnêteté du dispositif.</p>
+
+          <p>L'aiguillage était réversible plutôt que définitif. Si un utilisateur revenait à la recherche depuis une page de destination, nous lui servions les produits correspondants. La redirection était une valeur par défaut forte, pas une porte verrouillée &mdash; ce qui compte, parce qu'une erreur de classification coûte alors un détour à l'utilisateur au lieu de l'abandonner en chemin.</p>
+
+          <p>Et toute modification importante du dictionnaire d'intentions était livrée sous forme de test A/B. Celui-là est facile à négliger&nbsp;: une taxonomie a des airs de configuration, une liste de termes que quelqu'un modifie, plutôt que de changement de produit. Or modifier cette liste réaiguille silencieusement le trafic de toute la plateforme, ce qui en fait l'une des choses à plus fort effet de levier que quiconque dans l'équipe puisse toucher. Elle méritait la même discipline de mise en production qu'une fonctionnalité.</p>
+
+          <h2>Le moteur en dessous</h2>
+
+          <p>Rien de tout cela ne tient si le système ne peut pas déterminer ce qu'une requête veut dire&nbsp;; en parallèle, nous avons donc modernisé la recherche documentaire&nbsp;: découpage correct des mots, couche de synonymes de domaine pour le vocabulaire automobile que les modèles généralistes traitent mal, détection et correction des fautes de frappe. Côté classement, nous sommes passés des règles vers un modèle personnalisé &mdash; en conservant délibérément des leviers opérationnels pour les marques mises en avant, les campagnes et les priorités d'affaires, parce qu'un système de classement que l'entreprise ne peut pas du tout influencer est un système que l'entreprise contournera.</p>
+
+          <p>Nous avons aussi travaillé les parties du parcours qui précèdent l'existence d'une requête&nbsp;: le texte indicatif dans la boîte de recherche, les suggestions de saisie automatique, les termes tendance et mis en avant sur la page pré-recherche. Sur une plateforme à faible fréquence où beaucoup d'utilisateurs n'ont pas le vocabulaire précis de ce dont ils ont besoin, ce que vous suggérez avant qu'ils tapent façonne une part surprenante de ce qu'ils tapent.</p>
+
+          <p>La capacité linguistique bâtie ici a fini par déborder de la recherche. Le même dictionnaire et la même chaîne de traitement se sont révélés utiles pour l'étiquetage des produits et pour faire remonter les avis clients les plus pertinents par utilisateur, et nous avons fini par les offrir aux autres équipes comme un service. Une infrastructure linguistique de domaine bâtie pour une surface n'est que rarement utile à cette seule surface.</p>
+
+          <h2>Le rythme d'exploitation</h2>
+
+          <p>Chaque mise en production passait par un test A/B, et nous faisions une revue hebdomadaire avec la science des données et les opérations&nbsp;: quelles requêtes sous-performaient, pourquoi, et quoi essayer ensuite. Deux carnets alimentaient cette revue &mdash; les requêtes à fort volume et faible taux de clics pour le trafic restant dans la recherche, et les sous-performances de conversion signalées pour le trafic aiguillé. Les deux s'écrivent tout seuls, et les deux font ressortir des décalages d'intention que les indicateurs de pertinence agrégés masquent complètement.</p>
+
+          <p>Cette cadence a compté plus que n'importe quel lancement particulier. L'optimisation de la recherche n'est pas un projet qu'on termine. C'est un rythme d'exploitation qu'on installe.</p>
+
+          <p>Les résultats ont été nettement positifs sur la conversion et le volume d'affaires du trafic touché, et les gains se sont fortement concentrés sur les intentions de service &mdash; ce qui se comprend, puisque c'étaient les requêtes où l'ancien comportement était le plus erroné.</p>
+
+          <p>Le lave-auto est le cas le plus net. L'ancienne page de résultats répondait à cette requête par des crayons nettoyants et du lave-glace, et obtenait un taux de clics à un chiffre. La remplacer par les lave-autos à proximité a amené une forte proportion de ce trafic à réellement réserver. Ces deux chiffres mesurent des choses différentes &mdash; un clic sur une fiche contre une commande passée &mdash; ce qui est exactement le propos de la section précédente&nbsp;: dès que vous aiguillez, l'ancien indicateur cesse d'exister et vous devez en adopter un nouveau. Mais aucune lecture ne les rapproche. La requête n'a jamais porté sur l'achat de quoi que ce soit. Elle portait sur le fait de faire laver la voiture, et pendant des années nous y avons répondu par des produits, parce que les produits étaient ce que la recherche savait renvoyer.</p>
+
+          <h2>Ce que j'emporterais vers un autre produit</h2>
+
+          <p><strong>On gagne un débat sur un indicateur avec un résultat, pas avec un argument.</strong> Le travail d'aiguillage était techniquement banal. Ce qui l'a rendu possible, c'est un indicateur qui créditait la recherche pour des dénouements dont elle ne détenait pas le dernier clic &mdash; et j'ai obtenu cet indicateur en menant d'abord l'expérience et en rapportant des chiffres, pas en plaidant dans l'abstrait. L'ancien indicateur avait aussi discrètement façonné ce que je pouvais concevoir&nbsp;: j'ai longtemps optimisé pour garder les gens sur une page parce que c'était le chiffre, et l'alternative n'était pas visible de l'intérieur. Presque tout changement de produit intéressant que j'ai vu était bloqué par une incitation plutôt que par une capacité, et débloqué par un petit résultat que personne n'avait eu à approuver d'avance.</p>
+
+          <p><strong>La recherche est une surface de distribution, pas une destination.</strong> Son travail est d'amener les utilisateurs vers la meilleure expérience pour leur besoin. Parfois c'est une page de résultats&nbsp;; souvent non. Les équipes qui mesurent la recherche uniquement par ce qui se passe sur la page de résultats ne le découvriront jamais, parce que l'instrumentation interdit la réponse.</p>
+
+          <p><strong>L'architecture de recherche découle de la forme de l'entreprise.</strong> La faible fréquence, le conditionnement par la compatibilité et un catalogue peu profond ne sont pas des cas limites à contourner &mdash; ce sont le cahier des charges. Copier la recherche d'un marché en ligne généraliste dans une entreprise qui n'en est pas un importe des hypothèses qui, silencieusement, ne tiennent pas.</p>
+
+          <p><strong>Vos utilisateurs vous disent déjà où vous vous trompez.</strong> Les requêtes à fort volume et faible taux de clics sont la recherche produit la moins chère qui soit, dans les mots mêmes des utilisateurs, gratuitement.</p>
+
+          <h2>La partie que je n'ai pas eu à construire</h2>
+
+          <p>Une faible fréquence d'achat n'est pas une faible fréquence de <em>besoin</em>, et confondre les deux est l'erreur que toute l'industrie commet à propos d'entreprises comme celle-là.</p>
+
+          <p>Personne ne change ses pneus tous les jours. Mais les gens ramassent un clou. Ils éraflent un pare-chocs dans un stationnement souterrain. Ils entendent un bruit au démarrage les matins froids et ne savent pas si c'est grave. Ces moments sont fréquents, ils sont urgents, et ce que la personne veut à ce moment-là n'est pas une fiche produit. C'est une réponse professionnelle de quelqu'un qui s'y connaît vraiment.</p>
+
+          <p>Une plateforme dotée de véritables opérations de service peut répondre à cela de façon crédible, comme un marché généraliste ne le peut pas et comme un forum rempli d'inconnus ne le devrait pas. Cette capacité était là, inutilisée, parce que la recherche restait pensée comme un endroit où acheter des choses plutôt que comme un endroit où demander quelque chose.</p>
+
+          <p>À court terme, répondre à ces questions ne vend rien. C'est là tout le problème &mdash; et c'est le même mur que j'avais déjà franchi une fois, un étage plus bas.</p>
+
+          <p>Nous avions gagné le débat sur l'indicateur pour faire construire l'aiguillage&nbsp;: la recherche était passée d'une évaluation sur la conversion en page de résultats à une évaluation sur la production totale des utilisateurs de la recherche. C'est précisément ce changement qui a rendu l'aiguillage rationnel. C'est aussi précisément ce qui bloque un produit de conseil, parce qu'une question bien répondue sur un clou dans un pneu ne produit aucune transaction attribuable à l'intérieur de la fenêtre de mesure. J'avais changé la mesure assez pour construire un aiguillage. Je ne l'avais pas changée assez pour construire une relation.</p>
+
+          <p>Je dois dire franchement que je n'ai jamais eu de conception de mesure pour cela, et que la question n'a jamais fait l'objet d'une discussion sérieuse. L'entreprise se dirigeait vers une entrée en bourse, et l'attention de la direction portait sur le revenu et le profit &mdash; ce qui est une préoccupation légitime pour une entreprise en préparation d'introduction, et non une histoire de gens qui n'auraient pas compris. Mais cela signifie que l'idée n'a jamais atteint le stade d'être réfutée sur le fond. Elle n'avait rien à dire pour elle-même dans la seule langue que parlait la salle.</p>
+
+          <p>C'est la partie que je ferais autrement. «&nbsp;Ça bâtit la confiance et stimule l'engagement&nbsp;» est l'argument que toute initiative non mesurable avance pour elle-même, et il mérite le scepticisme qu'il reçoit. Dans une entreprise à faible fréquence, la fenêtre de mesure honnête d'un produit bâtisseur de confiance est plus longue que le cycle de planification &mdash; il faudrait un an ou plus de comportement de réachat avant de savoir quoi que ce soit, ce qui est précisément ce qui rend la chose difficile à financer. Je n'avais pas de proposition sur la façon de mener cela, et ne pas en avoir fait partie des raisons pour lesquelles l'idée est morte. Se présenter avec une conviction et aucune mesure, c'est ainsi qu'on perd un débat contre quelqu'un qui tient un tableur, et cette personne n'a pas tort de le gagner.</p>
+
+          <p>Il y a aussi un argument concurrentiel. Les mécanismes d'aiguillage se sont avérés assez copiables&nbsp;; l'approche a été reprise ailleurs assez vite. Une relation bâtie sur le fait d'être l'endroit où les gens demandent quand quelque chose ne va pas avec leur voiture est bien plus lente à copier, parce qu'elle s'accumule au lieu de se livrer.</p>
+
+          <p>Je continue de penser que c'est cette version-là du produit qui vaut la peine d'être construite. Une recherche qui vous vend quelque chose est une fonctionnalité. Une recherche qui vous dit ce qui ne va pas vraiment est une entreprise.</p>
+        </div>
+
+        <hr />
+        <p style="color: var(--ink-soft); font-size: var(--step--1)">
+          Écrit par Leon Sun. Répondez par
+          <a href="mailto:hancocksun@gmail.com">courriel</a> &mdash; je lis tout.
+        </p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap site-footer__inner">
+        <p style="margin: 0">&copy; <span data-year>2026</span> Leon Sun</p>
+        <ul class="social">
+          <li><a href="mailto:hancocksun@gmail.com">Courriel</a></li>
+          <li><a href="https://github.com/Leon-sun" rel="me noopener" target="_blank">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/xiangxin-sun-100bb347" rel="me noopener" target="_blank">LinkedIn</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+  </body>
+</html>

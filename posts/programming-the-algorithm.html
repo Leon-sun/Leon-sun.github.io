@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>You Are Not Buying Users. You Are Programming an Algorithm. — Leon Sun</title>
+    <meta name="description" content="Paid acquisition at tens of millions a year, where the only real lever is what you tell the platform counts as success." />
+    <meta name="color-scheme" content="light dark" />
+
+    <meta property="og:title" content="You Are Not Buying Users. You Are Programming an Algorithm." />
+    <meta property="og:description" content="Paid acquisition at tens of millions a year, where the only real lever is what you tell the platform counts as success." />
+    <meta property="og:type" content="article" />
+
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="alternate" hreflang="en" href="programming-the-algorithm.html" />
+    <link rel="alternate" hreflang="fr" href="../fr/posts/programming-the-algorithm.html" />
+    <link rel="icon" href="data:," />
+    <script>
+      try {
+        var t = localStorage.getItem("theme");
+        if (t) document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    </script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="wordmark" href="../index.html">Leon Sun</a>
+
+        <nav class="nav" id="site-nav" aria-label="Primary">
+          <a href="../work.html">Work</a>
+          <a href="../writing.html">Writing</a>
+          <a href="../about.html">About</a>
+        </nav>
+
+        <div class="site-header__actions">
+          <span class="lang-switch">
+            <a href="programming-the-algorithm.html" aria-current="true" lang="en" hreflang="en">EN</a>
+            <span class="lang-switch__sep" aria-hidden="true">/</span>
+            <a href="../fr/posts/programming-the-algorithm.html" lang="fr" hreflang="fr">FR</a>
+          </span>
+
+          <a class="icon-link" href="https://github.com/Leon-sun" target="_blank" rel="me noopener" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a>
+          <a class="icon-link" href="https://www.linkedin.com/in/xiangxin-sun-100bb347" target="_blank" rel="me noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
+
+          <button class="theme-toggle" type="button" aria-label="Switch theme" title="Switch theme"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" /></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" /></svg></button>
+
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu" title="Menu"><svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" /></svg><svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" /></svg></button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <article class="article wrap">
+        <a class="back-link" href="../writing.html">&larr; All writing</a>
+
+        <header class="article__header">
+          <p class="article__meta">August 2026 &middot; Part 1 of 4 &middot; 7 min read</p>
+          <h1>You Are Not Buying Users. You Are Programming an Algorithm.</h1>
+          <p class="series-note">Part 1 of 4 on rebuilding paid growth at an automotive services platform.</p>
+        </header>
+
+        <div class="article__body">
+          <p>When I moved onto growth, the product manager's job was to receive API documentation from the ad platforms and hand it to engineering. Two years later I owned how a paid acquisition budget in the tens of millions of dollars a year got allocated.</p>
+          <p>The distance between those two things came from one realization: <strong>we were not buying media. We were programming somebody else's optimization algorithm &mdash; badly, and without knowing that was what we were doing.</strong></p>
+          <p>People buy tires once every couple of years, and the purchase completes in a physical store rather than on a screen. The company could bring existing customers back but could not manufacture a first-time customer, so paid acquisition was the gate to a relationship with no other way of starting.</p>
+          <h2>The decision hiding inside an integration ticket</h2>
+          <p>Running OCPX campaigns means calling conversion events back to the ad platform so its model can optimize toward them. Mechanically it looks like plumbing: the platform sends developer documentation, you pass it to engineering, engineering implements the callback.</p>
+          <p>Here is what nobody had said out loud.</p>
+          <p>These platforms run the targeting. Their models decide who sees your ad, in what context, at what price. You control none of it. What you control &mdash; the only thing you control &mdash; is <strong>what you tell them counts as success.</strong> Report registrations and the algorithm finds people who register. Report paid orders and it finds people who pay.</p>
+          <p>You are writing the objective function for a system with far better targeting data than you will ever have. That is not an integration. That is the product decision, and it was arriving in our backlog as a ticket.</p>
+          <h2>Wrong in two directions at once</h2>
+          <p>We were reporting order placement, reasoning that we wanted users showing purchase intent. It failed twice over.</p>
+          <p><strong>About 40% of placed orders were never paid for.</strong> So close to half the examples we fed the platform's model were false positives. We were not merely wasting signal &mdash; we were actively training their targeting to find more people who place orders and never pay. The algorithm was doing exactly what we asked.</p>
+          <p>The cause was not in the ad system at all. It was a defect in the order journey design. A pure media buyer never finds that, because they do not own the funnel.</p>
+          <p><strong>And order placement was too rare to learn from.</strong> In a business where people buy every couple of years, purchase events arrive sparsely. These platforms need a stream of examples before their models stabilize; too few and a campaign dies in its learning phase without ever getting good. Many of ours did.</p>
+          <p>The obvious fix to the first problem makes the second worse. Move to paid orders: cleaner signal, rarer signal. Move shallower to registrations: escape cold start, teach the model to find non-buyers. Every option was wrong in one direction or the other.</p>
+          <p>The mechanism underneath explains why sparse signals lose auctions rather than merely learning slowly. Ranking in these auctions works roughly on <strong>bid &times; predicted conversion rate</strong>. Ask the platform to predict something that almost never happens and your predicted rate is low, so your effective bid is low, so you lose impressions &mdash; not because you were outbid, but because you asked the system to forecast an event it has almost no evidence for. Your conversion event choice <em>is</em> your auction competitiveness.</p>
+          <h2>There was no right answer, which was the answer</h2>
+          <p>I spent time watching the data and, more usefully, watching what operators did and asking why. They disagreed with each other. Some insisted the event should be order placement; others that only real payment counted.</p>
+          <p>Both were right, for different parts of the business.</p>
+          <p>Tires are competitive and transactional &mdash; the customer knows what they want, compares, and buys. Order placement is a fair proxy for intent there. Maintenance is a service, and services need trust before anyone commits; optimizing for immediate order placement in that category finds only the people already ready, and never builds the audience that would have converted with more consideration. The right answer varied by platform too.</p>
+          <p>There was also a consequence nobody had noticed. <strong>A single global conversion event silently allocates budget across business lines</strong>, because the algorithm flows spend toward whatever converts fastest regardless of what the company wants to grow. We had been making a portfolio decision by accident, in a config file.</p>
+          <h2>Building the mechanism instead of picking the answer</h2>
+          <p>I could have chosen an event and defended it. Given the right answer genuinely varied by platform and category, defending any single choice meant being wrong most of the time.</p>
+          <p>So I built the configuration mechanism instead: each campaign could set which conversion event it reported back, and the choices were instrumented so we would learn what worked where. Different channels converged on different goals, and 20&ndash;40% of campaigns moved onto the predicted-conversion event described below.</p>
+          <p>More interesting was what the flexibility got used <em>for</em>. The conversion goal became a lever operators moved with the business. During promotional periods, when traffic converts well anyway, they leaned toward shallower goals that generate more conversions and buy more reach. When defending margin, or when a tighter cost requirement came down, they moved to deeper goals &mdash; and the prediction model adjusted with them. That is a use I did not anticipate and could not have prescribed centrally.</p>
+          <h2>Predicting the signal instead of waiting for it</h2>
+          <p>Sparsity still needed solving, and waiting for real purchases was never going to solve it.</p>
+          <p>With the data science team we built a model identifying users likely to go on and buy, and reported those predictions back to the platforms earlier than a real purchase would have arrived. Denser signal, faster feedback, campaigns that survive their learning phase.</p>
+          <p>The obvious hazard: you are now training the platform's model on your model's output. Get the predictor wrong and the platform obligingly finds more of whatever your bias favours, which feeds back into your training data.</p>
+          <p>The control was the confidence threshold, treated as a dial rather than a setting. Loosen it for density at the cost of precision; tighten it for the reverse. We tuned until campaigns running on predicted conversions performed like campaigns running on real ones, judged against our own backend cost per new paying customer rather than the platform's self-reported conversions.</p>
+          <p>The result was roughly 20% more exposure at flat cost per new customer. I state it that way deliberately: naming what was held constant is what makes a number a result rather than a boast.</p>
+          <h2>Specifying who, not just what</h2>
+          <p>The last thing you can specify is the audience.</p>
+          <p>We built an RTA system &mdash; rather than accepting the platform's targeting wholesale, we responded to individual bid opportunities in real time using our own first-party data, deciding whether to bid, how much, and which creative to serve. To do it without handing over customer data, we worked with the platforms on federated modelling, so they could find users resembling ours without either side exposing what it held.</p>
+          <p>It mattered most for warm users: people who had registered, searched, or viewed a product without ordering. We bid up to bring them back, and tested it through the platform's own RTA A/B capability, randomized at the traffic level &mdash; one arm got our targeting and bid strategy, the other returned a plain bid response and let the platform's optimization work.</p>
+          <p>The strategy arm converted about 25% better. It also spent more, which was the point. So the comparison that mattered was cost per conversion and ROI, not conversion volume, and both improved. More spend at lower unit cost is a result; more spend at the same efficiency is just a bigger budget. Worth noting that both arms saw advertising, so this isolates our strategy against the platform's default and says nothing about whether the advertising itself was incremental.</p>
+          <p>Alongside it we fixed how audiences reached the platforms at all. Activating a segment had meant somebody manually exporting a customer list and handing it over &mdash; slow, unrepeatable, a genuine data exposure. We replaced it with a standardized flow: select an internal segment by semantic label, push it as a coded group, apply it as targeting. Same capability, none of the risk, repeatable by anyone.</p>
+          <h2>What I would carry to another product</h2>
+          <p><strong>The specification is the product.</strong> What you report as success, what you accept as evidence, and who you tell the system to look for determine everything the algorithm does on your behalf. All three arrive disguised as configuration, which is why almost nobody treats them as product decisions &mdash; and why treating them that way is such an advantage.</p>
+          <p><strong>When the right answer varies by case, build the mechanism instead of winning the argument.</strong> I could not have known the correct conversion event for every platform, category and season. Letting the people closest to each campaign choose, and instrumenting what they chose, beat any answer I could have defended.</p>
+        </div>
+
+        <nav class="series-nav" aria-label="Rebuilding paid growth">
+          <p class="series-nav__label">Rebuilding paid growth &middot; Part 1 of 4</p>
+          <a class="series-nav__link" href="what-a-customer-cost.html">
+            <span class="series-nav__dir">Next &rarr;</span>
+            <span class="series-nav__title">Knowing What a Customer Actually Cost</span>
+          </a>
+        </nav>
+
+        <hr />
+        <p style="color: var(--ink-soft); font-size: var(--step--1)">
+          Written by Leon Sun. Reply by <a href="mailto:hancocksun@gmail.com">email</a> &mdash; I read everything.
+        </p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap site-footer__inner">
+        <p style="margin: 0">&copy; <span data-year>2026</span> Leon Sun</p>
+        <ul class="social">
+          <li><a href="mailto:hancocksun@gmail.com">Email</a></li>
+          <li><a href="https://github.com/Leon-sun" rel="me noopener" target="_blank">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/xiangxin-sun-100bb347" rel="me noopener" target="_blank">LinkedIn</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+  </body>
+</html>

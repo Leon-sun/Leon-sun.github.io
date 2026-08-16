@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Savoir ce qu'un client coûtait vraiment — Leon Sun</title>
+    <meta name="description" content="L'équipe qui dépensait tout le budget d'acquisition ne pouvait pas voir ce que coûtait un client. Combler l'écart entre le chiffre visible et le vrai chiffre a constitué l'essentiel du travail." />
+    <meta name="color-scheme" content="light dark" />
+
+    <meta property="og:title" content="Savoir ce qu'un client coûtait vraiment" />
+    <meta property="og:description" content="L'équipe qui dépensait tout le budget d'acquisition ne pouvait pas voir ce que coûtait un client. Combler l'écart entre le chiffre visible et le vrai chiffre a constitué l'essentiel du travail." />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="fr_CA" />
+
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="alternate" hreflang="en" href="../../posts/what-a-customer-cost.html" />
+    <link rel="alternate" hreflang="fr" href="what-a-customer-cost.html" />
+    <link rel="icon" href="data:," />
+    <script>
+      try {
+        var t = localStorage.getItem("theme");
+        if (t) document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    </script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Aller au contenu</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="wordmark" href="../index.html">Leon Sun</a>
+
+        <nav class="nav" id="site-nav" aria-label="Principale">
+          <a href="../work.html">Projets</a>
+          <a href="../writing.html">Textes</a>
+          <a href="../about.html">À propos</a>
+        </nav>
+
+        <div class="site-header__actions">
+          <span class="lang-switch">
+            <a href="../../posts/what-a-customer-cost.html" lang="en" hreflang="en">EN</a>
+            <span class="lang-switch__sep" aria-hidden="true">/</span>
+            <a href="what-a-customer-cost.html" aria-current="true" lang="fr" hreflang="fr">FR</a>
+          </span>
+
+          <a class="icon-link" href="https://github.com/Leon-sun" target="_blank" rel="me noopener" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a>
+          <a class="icon-link" href="https://www.linkedin.com/in/xiangxin-sun-100bb347" target="_blank" rel="me noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
+
+          <button class="theme-toggle" type="button" aria-label="Changer de thème" title="Changer de thème"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" /></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" /></svg></button>
+
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu" title="Menu"><svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" /></svg><svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" /></svg></button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <article class="article wrap">
+        <a class="back-link" href="../writing.html">&larr; Tous les textes</a>
+
+        <header class="article__header">
+          <p class="article__meta">Août 2026 &middot; Partie 2 de 4 &middot; 7 min de lecture</p>
+          <h1>Savoir ce qu'un client coûtait vraiment</h1>
+          <p class="series-note">Partie 2 de 4 sur la reconstruction de la croissance payante d'une plateforme de services automobiles.</p>
+        </header>
+
+        <div class="article__body">
+          <p>Pendant longtemps, l'équipe qui dépensait la totalité de notre budget d'acquisition ne pouvait pas voir ce que coûtait un client.</p>
+          <p>Ce n'était pas de la négligence. Elle surveillait le seul chiffre disponible en temps réel, qui se trouvait être le mauvais. Cet écart &mdash; entre le chiffre visible et le chiffre qui compte &mdash; s'est avéré constituer l'essentiel du travail.</p>
+          <p>Les gens achètent des pneus une fois tous les deux ans, et l'achat se conclut dans un magasin physique plutôt qu'à l'écran. L'acquisition payante était la porte d'entrée d'une relation qui n'avait aucun autre moyen de commencer. Quand l'acquisition est à ce point centrale, connaître son coût réel n'est pas une coquetterie de reddition de comptes.</p>
+          <h2>Piloter au chiffre visible</h2>
+          <p>Les plateformes publicitaires vous fournissent un rapport en temps réel. Il vous dit ce que coûte une impression, ce que coûte un clic, à quel rythme une campagne progresse. Il se met à jour en continu, et il se trouve exactement là où l'opérateur travaille déjà.</p>
+          <p>Ce qu'il ne peut pas vous dire, c'est s'il en est résulté un client payant. Cela vit dans vos propres systèmes, avec des jours de retard, à un autre endroit &mdash; et dans notre cas, en partie dans un magasin où quelqu'un a physiquement posé un pneu.</p>
+          <p>Les opérations optimisaient donc le coût en amont, parce que le coût en amont était ce qui existait. Personne n'a choisi cela. C'était la forme des outils.</p>
+          <p>La conséquence est facile à énoncer et difficile à remarquer de l'intérieur&nbsp;: <strong>une campagne au coût par clic excellent peut être votre pire campagne.</strong> Le trafic bon marché l'est pour des raisons, et ces raisons se manifestent deux étapes plus loin dans l'entonnoir, là où personne ne regardait.</p>
+          <h2>L'attribution est une décision de conception, pas un réglage</h2>
+          <p>Avant de pouvoir calculer un vrai coût par client, il faut décider quelle dépense reçoit le crédit de quel client. La plupart des gens traitent cela comme de la configuration &mdash; on choisit le dernier clic et on passe à autre chose. C'est considérablement moins tranché que cela.</p>
+          <p>Les plateformes ne vous remettent pas des preuves comparables. Une annonce illustrée déclare un <strong>clic</strong>. Une annonce vidéo sur Douyin ou Kuaishou déclare une <strong>vue de trois secondes</strong> &mdash; ce qui n'est presque pas une intention, et se trouve commodément généreux envers la partie qui déclare.</p>
+          <p>Sous une règle naïve de dernier contact, les deux comptent comme le même événement. Ainsi, un utilisateur qui a réellement cliqué sur une annonce illustrée le lundi, y a réfléchi, puis a fait défiler trois secondes de vidéo le jeudi verra la conversion créditée à la vidéo. À grande échelle, cela déplace du budget vers la vidéo pour des conversions que les clics ont réellement produites &mdash; et les données donneront l'impression que la vidéo fonctionne.</p>
+          <p>Nous sommes restés au dernier contact, suivant la pratique locale du secteur, avec une correction&nbsp;: <strong>un vrai clic se voyait accorder une fenêtre plus longue pour rester rattaché à une conversion qu'une vue de trois secondes.</strong> Une preuve forte d'intention reste valable plus longtemps&nbsp;; une preuve faible expire vite et cesse de voler du crédit.</p>
+          <p>Ce n'est pas une astuce. C'est prendre au sérieux le fait que l'attribution encode ce que vous acceptez comme preuve, et que tout chiffre en aval hérite de votre réponse.</p>
+          <h2>Chacun parle une langue différente</h2>
+          <p>L'obstacle suivant était banal et a pris des mois.</p>
+          <p>Chaque plateforme publicitaire nomme les choses à sa façon &mdash; campagnes, groupes d'annonces, annonces, emplacements &mdash; et définit ses indicateurs selon ses propres termes. Ce que l'une appelle une conversion, l'autre l'appelle une action. Ce que l'une compte par session, l'autre le compte par jour.</p>
+          <p>Ce qui rend une question aussi élémentaire que <em>quel canal nous donne le nouveau client payant le moins cher</em> sans réponse possible &mdash; non par manque de données, mais par manque de vocabulaire commun. On ne peut pas comparer deux choses mesurées dans des unités différentes par des parties aux incitations différentes.</p>
+          <p>J'ai donc lu la documentation d'API des plateformes, établi ce que chaque champ signifiait réellement, et transposé le tout dans une seule langue interne&nbsp;: un jeu unique de colonnes de rapport où une campagne est une campagne et une conversion est une conversion, quelle qu'en soit l'origine. Coût, exposition, clics, conversion en amont, conversion en aval, RCI, nouveaux clients &mdash; plus les dimensions qui rendent l'analyse possible tout court, comme la variante A/B et la page d'arrivée vues par l'utilisateur. Puis j'ai travaillé avec l'équipe d'informatique décisionnelle pour reconstruire la reddition de comptes par-dessus.</p>
+          <p>Ce n'était pas prestigieux, et j'ai d'abord résisté à l'idée d'y voir du travail de produit. C'<em>était</em> le travail de produit. Chaque comparaison et chaque expérience menées ensuite dépendent de l'existence de cette couche de traduction.</p>
+          <h2>La chaîne qui doit réellement tenir</h2>
+          <p>C'est ici que se situe la vraie difficulté.</p>
+          <p>Pour dire <em>ce client payant précis nous a coûté tant</em>, il faut relier&nbsp;: clic publicitaire &rarr; utilisateur de l'application &rarr; commande passée &rarr; payée &rarr; servie. Cinq maillons, chacun étant une jointure entre des systèmes jamais conçus pour se parler, dans une entreprise où la dernière étape se déroule dans un magasin physique.</p>
+          <p>Chacune de ces jointures est une décision, pas une simple consultation. Combien de temps après un clic une installation d'application compte-t-elle encore comme attribuable&nbsp;? Et si l'utilisateur s'est inscrit avec un numéro de téléphone différent de celui de sa commande&nbsp;? Et s'il a commandé le mardi et fait poser les pneus le samedi &mdash; quelle date détient la conversion&nbsp;?</p>
+          <p>Trompez-vous sur une seule jointure et vous n'obtenez aucun message d'erreur. Vous obtenez un chiffre faux avec assurance, contre lequel tout le monde prend ensuite des décisions, ce qui est pire que de n'avoir aucun chiffre.</p>
+          <h2>Mettre la vraie économie là où les gens travaillent</h2>
+          <p>La chaîne tenant et une langue commune étant en place, nous avons enfin pu construire ce qui manquait aux opérations&nbsp;: une vue unique montrant la dépense, l'état de sortie de la phase d'apprentissage, le coût déclaré par la plateforme, le <strong>vrai coût par nouveau client payant</strong> et le RCI.</p>
+          <p>L'effet a été plus simple que je ne l'attendais. Dès que le vrai coût par client est devenu aussi visible et aussi actuel que le coût par clic, les gens ont cessé d'optimiser le coût par clic. Personne n'a eu à être convaincu. Le chiffre au moyen duquel ils pilotaient n'était plus le seul à l'écran.</p>
+          <h2>Ce que nous pouvions et ne pouvions pas établir</h2>
+          <p>Une meilleure mesure vous rend plus honnête sur ce que vous savez, pas moins.</p>
+          <p>Deux choses que nous pouvions établir. Entre canaux, nous pouvions comparer le coût réalisé par nouveau client payant et le RCI &mdash; ce pour quoi la langue commune avait précisément été bâtie, et la façon dont le budget était réparti. Et à l'intérieur d'un même canal, nous pouvions comparer les objectifs de conversion entre eux et voir de véritables différences, parce que l'audience, l'inventaire et la tarification y sont tenus à peu près constants.</p>
+          <p>La distinction entre les deux mérite de la prudence, car elle s'estompe facilement. Comparer des canaux sur le coût réalisé vous dit où placer le dollar suivant. Cela ne vous dit pas <em>pourquoi</em> un canal est moins cher &mdash; si un canal fonctionne surtout avec des objectifs de conversion profonds et un autre surtout avec des objectifs en amont, l'écart entre eux ne dit rien sur les objectifs, puisque tout le reste diffère aussi. Les décisions de répartition peuvent se prendre sur des chiffres inter-canaux. Les conclusions stratégiques, non &mdash; d'où la nécessité que les tests aient lieu à l'intérieur d'un canal.</p>
+          <p>En pratique, les deux fonctionnent comme des leviers emboîtés, et le second compte le plus précisément là où le premier est contraint. La répartition est rarement libre&nbsp;: des ententes commerciales vous engagent à une dépense minimale sur une plateforme, qu'elle soit ou non la moins chère du moment&nbsp;; «&nbsp;déplacer l'argent vers le meilleur canal&nbsp;» n'est donc disponible que dans certaines limites. Quand le coût moyen d'un canal grimpe, vous réduisez son budget autant que les engagements le permettent &mdash; et il vous reste ensuite la composition interne. Un canal peut consacrer l'essentiel de sa dépense à des objectifs optimisés sur le paiement et une minorité à des objectifs optimisés sur la commande&nbsp;; modifier ce ratio change ce que le modèle de la plateforme part chercher, et change le coût réalisé, sans déplacer un seul dollar entre canaux.</p>
+          <p>La même intuition que dans le premier texte réapparaît donc un niveau plus bas. L'événement de conversion répartit le budget, que quelqu'un le gère ou non. Entre canaux, vous répartissez avec l'argent. À l'intérieur d'un canal, quand l'argent est fixe, vous répartissez avec l'objectif.</p>
+          <p>Ce que nous n'avons pas pu établir correctement, c'est l'<strong>incrémentalité</strong>. Nous avons mené des comparaisons bien dimensionnées sur de grands groupes d'annonces, délibérément à ce grain parce que la variance de la phase d'apprentissage rend les chiffres d'une campagne isolée dénués de sens. Mais une comparaison entre deux groupes traités vous dit quelle configuration est meilleure, jamais si le traitement l'emporte sur l'absence de traitement. Ce dont nous disposions était plus grossier&nbsp;: quand la dépense s'arrêtait, le trafic chutait visiblement d'une falaise. Cela vaut quelque chose &mdash; cela écarte l'hypothèse que l'acquisition payante ne faisait que récolter une demande qui serait arrivée de toute façon, l'accusation toujours disponible contre n'importe quel canal payant. Ce que cela ne peut pas vous dire, c'est l'ampleur, ni quelles parties de la dépense faisaient le travail.</p>
+          <p>Nous ne l'avons jamais mené correctement, pour une raison qui mérite d'être nommée, parce que c'est la vraie raison pour laquelle la plupart des entreprises ne le font pas&nbsp;: <strong>un véritable groupe témoin signifie renoncer délibérément à des clients qu'on aurait pu acquérir.</strong> L'entreprise n'aurait pas accepté cette fluctuation, et ce n'est pas une position déraisonnable quand l'acquisition est le seul moyen par lequel l'entreprise rencontre ses clients. La réponse méthodologique n'est pas de plaider pour le groupe témoin &mdash; c'est de le rendre moins coûteux. Les groupes témoins géographiques conviennent particulièrement bien à un réseau de magasins physiques, parce que la séparation régionale permet d'acheter la preuve au prix de la fluctuation d'un seul marché plutôt que de tout un trimestre. C'est ce que je construirais en premier aujourd'hui.</p>
+          <h2>Ce que j'emporterais vers un autre produit</h2>
+          <p><strong>La mesure est un problème de conception, pas de reddition de comptes.</strong> Les fenêtres d'attribution, ce qui compte comme preuve, quelle jointure détient une conversion &mdash; ce sont des décisions produit lourdes de conséquences, et elles se prennent par défaut si personne ne les prend délibérément.</p>
+          <p><strong>Les gens optimisent ce qui est visible en temps réel.</strong> Pas ce qui compte, pas ce qu'on leur dit d'avoir à cœur &mdash; ce qui est à l'écran pendant qu'ils travaillent. Si le mauvais chiffre est le chiffre rapide, vous obtiendrez indéfiniment le mauvais comportement de la part de bonnes personnes. Corriger cela vaut mieux qu'une formation de plus.</p>
+          <p><strong>Confrontez le chiffre du fournisseur au vôtre.</strong> Les plateformes publicitaires autodéclarent les conversions et sont structurellement incitées à attribuer généreusement. Tenir votre propre coût interne par client payant comme vérité de référence n'est pas de la paranoïa &mdash; c'est la seule version du chiffre qui n'ait aucun intérêt dans la réponse.</p>
+        </div>
+
+        <nav class="series-nav" aria-label="Reconstruire la croissance payante">
+          <p class="series-nav__label">Reconstruire la croissance payante &middot; Partie 2 de 4</p>
+          <a class="series-nav__link" href="programming-the-algorithm.html">
+            <span class="series-nav__dir">&larr; Précédent</span>
+            <span class="series-nav__title">Vous n'achetez pas des utilisateurs. Vous programmez un algorithme.</span>
+          </a>
+          <a class="series-nav__link" href="nobody-uses-a-black-box.html">
+            <span class="series-nav__dir">Suivant &rarr;</span>
+            <span class="series-nav__title">Personne n'utilise un système qu'il ne peut pas interroger</span>
+          </a>
+        </nav>
+
+        <hr />
+        <p style="color: var(--ink-soft); font-size: var(--step--1)">
+          Écrit par Leon Sun. Répondez par <a href="mailto:hancocksun@gmail.com">courriel</a> &mdash; je lis tout.
+        </p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap site-footer__inner">
+        <p style="margin: 0">&copy; <span data-year>2026</span> Leon Sun</p>
+        <ul class="social">
+          <li><a href="mailto:hancocksun@gmail.com">Courriel</a></li>
+          <li><a href="https://github.com/Leon-sun" rel="me noopener" target="_blank">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/xiangxin-sun-100bb347" rel="me noopener" target="_blank">LinkedIn</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+  </body>
+</html>

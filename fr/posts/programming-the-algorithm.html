@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vous n'achetez pas des utilisateurs. Vous programmez un algorithme. — Leon Sun</title>
+    <meta name="description" content="Une acquisition payante de plusieurs dizaines de millions par année, où le seul vrai levier est ce que vous déclarez à la plateforme comme étant un succès." />
+    <meta name="color-scheme" content="light dark" />
+
+    <meta property="og:title" content="Vous n'achetez pas des utilisateurs. Vous programmez un algorithme." />
+    <meta property="og:description" content="Une acquisition payante de plusieurs dizaines de millions par année, où le seul vrai levier est ce que vous déclarez à la plateforme comme étant un succès." />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="fr_CA" />
+
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="alternate" hreflang="en" href="../../posts/programming-the-algorithm.html" />
+    <link rel="alternate" hreflang="fr" href="programming-the-algorithm.html" />
+    <link rel="icon" href="data:," />
+    <script>
+      try {
+        var t = localStorage.getItem("theme");
+        if (t) document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    </script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Aller au contenu</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="wordmark" href="../index.html">Leon Sun</a>
+
+        <nav class="nav" id="site-nav" aria-label="Principale">
+          <a href="../work.html">Projets</a>
+          <a href="../writing.html">Textes</a>
+          <a href="../about.html">À propos</a>
+        </nav>
+
+        <div class="site-header__actions">
+          <span class="lang-switch">
+            <a href="../../posts/programming-the-algorithm.html" lang="en" hreflang="en">EN</a>
+            <span class="lang-switch__sep" aria-hidden="true">/</span>
+            <a href="programming-the-algorithm.html" aria-current="true" lang="fr" hreflang="fr">FR</a>
+          </span>
+
+          <a class="icon-link" href="https://github.com/Leon-sun" target="_blank" rel="me noopener" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a>
+          <a class="icon-link" href="https://www.linkedin.com/in/xiangxin-sun-100bb347" target="_blank" rel="me noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
+
+          <button class="theme-toggle" type="button" aria-label="Changer de thème" title="Changer de thème"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" /></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" /></svg></button>
+
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu" title="Menu"><svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" /></svg><svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" /></svg></button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <article class="article wrap">
+        <a class="back-link" href="../writing.html">&larr; Tous les textes</a>
+
+        <header class="article__header">
+          <p class="article__meta">Août 2026 &middot; Partie 1 de 4 &middot; 7 min de lecture</p>
+          <h1>Vous n'achetez pas des utilisateurs. Vous programmez un algorithme.</h1>
+          <p class="series-note">Partie 1 de 4 sur la reconstruction de la croissance payante d'une plateforme de services automobiles.</p>
+        </header>
+
+        <div class="article__body">
+          <p>Quand je suis passé à la croissance, le travail du gestionnaire de produit consistait à recevoir la documentation d'API des plateformes publicitaires et à la transmettre à l'ingénierie. Deux ans plus tard, j'avais la responsabilité de la répartition d'un budget d'acquisition payante de plusieurs dizaines de millions de dollars par année.</p>
+          <p>La distance entre ces deux situations tient à une seule prise de conscience&nbsp;: <strong>nous n'achetions pas de l'espace publicitaire. Nous programmions l'algorithme d'optimisation de quelqu'un d'autre &mdash; mal, et sans savoir que c'était ce que nous faisions.</strong></p>
+          <p>Les gens achètent des pneus une fois tous les deux ans, et l'achat se conclut dans un magasin physique plutôt qu'à l'écran. L'entreprise pouvait faire revenir ses clients existants, mais ne pouvait pas fabriquer un premier client&nbsp;; l'acquisition payante était donc la porte d'entrée d'une relation qui n'avait aucun autre moyen de commencer.</p>
+          <h2>La décision cachée dans un billet d'intégration</h2>
+          <p>Mener des campagnes OCPX suppose de renvoyer des événements de conversion à la plateforme publicitaire pour que son modèle optimise vers eux. Mécaniquement, cela ressemble à de la tuyauterie&nbsp;: la plateforme envoie sa documentation, vous la passez à l'ingénierie, l'ingénierie implémente le rappel.</p>
+          <p>Voici ce que personne n'avait dit à voix haute.</p>
+          <p>Ce sont ces plateformes qui gèrent le ciblage. Leurs modèles décident qui voit votre annonce, dans quel contexte, à quel prix. Vous n'en contrôlez rien. Ce que vous contrôlez &mdash; la seule chose que vous contrôliez &mdash; c'est <strong>ce que vous leur déclarez comme étant un succès.</strong> Déclarez les inscriptions et l'algorithme trouvera des gens qui s'inscrivent. Déclarez les commandes payées et il trouvera des gens qui paient.</p>
+          <p>Vous êtes en train d'écrire la fonction objectif d'un système qui dispose de bien meilleures données de ciblage que vous n'en aurez jamais. Ce n'est pas une intégration. C'est LA décision produit, et elle arrivait dans notre carnet sous forme de billet.</p>
+          <h2>Faux dans deux directions à la fois</h2>
+          <p>Nous déclarions la passation de commande, en nous disant que nous voulions des utilisateurs manifestant une intention d'achat. Cela échouait deux fois plutôt qu'une.</p>
+          <p><strong>Environ 40&nbsp;% des commandes passées n'étaient jamais payées.</strong> Près de la moitié des exemples que nous fournissions au modèle de la plateforme étaient donc des faux positifs. Nous ne gaspillions pas seulement du signal &mdash; nous entraînions activement leur ciblage à trouver davantage de gens qui passent des commandes sans jamais payer. L'algorithme faisait exactement ce que nous lui demandions.</p>
+          <p>La cause n'était pas du tout dans le système publicitaire. C'était un défaut dans la conception du parcours de commande. Un pur acheteur média ne trouve jamais cela, parce qu'il n'est pas propriétaire de l'entonnoir.</p>
+          <p><strong>Et la passation de commande était trop rare pour qu'on puisse en apprendre quelque chose.</strong> Dans une entreprise où les gens achètent tous les deux ans, les événements d'achat arrivent de façon clairsemée. Ces plateformes ont besoin d'un flux d'exemples avant que leurs modèles se stabilisent&nbsp;; trop peu, et une campagne meurt en phase d'apprentissage sans jamais devenir bonne. Beaucoup des nôtres sont mortes ainsi.</p>
+          <p>La correction évidente du premier problème aggrave le second. Passer aux commandes payées&nbsp;: signal plus propre, signal plus rare. Passer plus en amont, aux inscriptions&nbsp;: on échappe au démarrage à froid, on apprend au modèle à trouver des non-acheteurs. Chaque option était fausse dans un sens ou dans l'autre.</p>
+          <p>Le mécanisme sous-jacent explique pourquoi les signaux clairsemés perdent des enchères plutôt que d'apprendre simplement plus lentement. Le classement dans ces enchères fonctionne à peu près sur <strong>enchère &times; taux de conversion prédit</strong>. Demandez à la plateforme de prédire quelque chose qui n'arrive presque jamais et votre taux prédit est bas, donc votre enchère effective est basse, donc vous perdez des impressions &mdash; non parce qu'on vous a surenchéri, mais parce que vous avez demandé au système de prévoir un événement dont il n'a presque aucune preuve. Votre choix d'événement de conversion <em>est</em> votre compétitivité en enchère.</p>
+          <h2>Il n'y avait pas de bonne réponse, et c'était la réponse</h2>
+          <p>J'ai passé du temps à observer les données et, plus utilement, à observer ce que faisaient les opérateurs en leur demandant pourquoi. Ils n'étaient pas d'accord entre eux. Certains soutenaient que l'événement devait être la passation de commande&nbsp;; d'autres, que seul le paiement réel comptait.</p>
+          <p>Les deux avaient raison, pour des parties différentes de l'entreprise.</p>
+          <p>Les pneus relèvent d'un marché concurrentiel et transactionnel &mdash; le client sait ce qu'il veut, compare et achète. La passation de commande y est un indicateur d'intention acceptable. L'entretien est un service, et les services exigent de la confiance avant que quiconque s'engage&nbsp;; optimiser pour la commande immédiate dans cette catégorie ne trouve que les gens déjà prêts et ne construit jamais l'audience qui aurait converti avec un peu plus de réflexion. La bonne réponse variait aussi selon la plateforme.</p>
+          <p>Il y avait en outre une conséquence que personne n'avait remarquée. <strong>Un événement de conversion unique et global répartit silencieusement le budget entre les lignes d'affaires</strong>, parce que l'algorithme dirige la dépense vers ce qui convertit le plus vite, indépendamment de ce que l'entreprise veut faire croître. Nous prenions une décision de portefeuille par accident, dans un fichier de configuration.</p>
+          <h2>Construire le mécanisme au lieu de choisir la réponse</h2>
+          <p>J'aurais pu choisir un événement et le défendre. Étant donné que la bonne réponse variait réellement selon la plateforme et la catégorie, défendre un choix unique revenait à avoir tort la plupart du temps.</p>
+          <p>J'ai donc construit le mécanisme de configuration&nbsp;: chaque campagne pouvait définir quel événement de conversion elle renvoyait, et les choix étaient instrumentés afin que nous apprenions ce qui fonctionnait où. Des canaux différents ont convergé vers des objectifs différents, et de 20 à 40&nbsp;% des campagnes sont passées à l'événement de conversion prédite décrit plus bas.</p>
+          <p>Plus intéressant encore&nbsp;: l'usage qui a été fait de cette souplesse. L'objectif de conversion est devenu un levier que les opérateurs déplaçaient au rythme des affaires. En période promotionnelle, quand le trafic convertit bien de toute façon, ils penchaient vers des objectifs plus en amont, qui génèrent plus de conversions et achètent plus de portée. Quand il fallait défendre la marge, ou quand une exigence de coût plus serrée descendait, ils passaient à des objectifs plus profonds &mdash; et le modèle de prédiction s'ajustait avec eux. C'est un usage que je n'avais pas anticipé et que je n'aurais pas pu prescrire de façon centralisée.</p>
+          <h2>Prédire le signal au lieu de l'attendre</h2>
+          <p>La rareté restait à résoudre, et attendre de vrais achats n'allait jamais la résoudre.</p>
+          <p>Avec l'équipe de science des données, nous avons construit un modèle repérant les utilisateurs susceptibles d'aller jusqu'à l'achat, et nous renvoyions ces prédictions aux plateformes plus tôt qu'un achat réel ne serait arrivé. Signal plus dense, rétroaction plus rapide, campagnes qui survivent à leur phase d'apprentissage.</p>
+          <p>Le danger évident&nbsp;: vous entraînez désormais le modèle de la plateforme sur la sortie de votre propre modèle. Trompez-vous dans le prédicteur, et la plateforme trouvera obligeamment davantage de ce que votre biais favorise, ce qui revient ensuite dans vos données d'entraînement.</p>
+          <p>Le contrôle était le seuil de confiance, traité comme un cadran plutôt que comme un réglage. On le desserre pour la densité au prix de la précision&nbsp;; on le resserre pour l'inverse. Nous l'avons ajusté jusqu'à ce que les campagnes fonctionnant sur conversions prédites performent comme celles fonctionnant sur conversions réelles, jugées d'après notre propre coût interne par nouveau client payant plutôt que d'après les conversions autodéclarées par la plateforme.</p>
+          <p>Le résultat&nbsp;: environ 20&nbsp;% d'exposition en plus à coût par nouveau client constant. Je le formule ainsi délibérément&nbsp;: nommer ce qui a été tenu constant est ce qui fait d'un chiffre un résultat plutôt qu'une vantardise.</p>
+          <h2>Spécifier qui, et pas seulement quoi</h2>
+          <p>La dernière chose que vous pouvez spécifier, c'est l'audience.</p>
+          <p>Nous avons bâti un système RTA &mdash; plutôt que d'accepter le ciblage de la plateforme en bloc, nous répondions en temps réel à chaque occasion d'enchère à partir de nos propres données clients, en décidant s'il fallait enchérir, à quel montant et avec quelle création publicitaire. Pour le faire sans céder de données clients, nous avons travaillé avec les plateformes sur de la modélisation fédérée, afin qu'elles puissent trouver des utilisateurs ressemblant aux nôtres sans qu'aucune des deux parties n'expose ce qu'elle détenait.</p>
+          <p>Cela comptait surtout pour les utilisateurs tièdes&nbsp;: les gens qui s'étaient inscrits, avaient cherché ou consulté un produit sans commander. Nous enchérissions plus haut pour les ramener, et nous l'avons testé au moyen de la capacité de test A/B RTA de la plateforme elle-même, randomisée au niveau du trafic &mdash; un bras recevait notre ciblage et notre stratégie d'enchère, l'autre renvoyait une réponse d'enchère neutre et laissait travailler l'optimisation de la plateforme.</p>
+          <p>Le bras stratégique convertissait environ 25&nbsp;% mieux. Il dépensait aussi davantage, ce qui était le but. La comparaison qui comptait était donc le coût par conversion et le RCI, non le volume de conversions&nbsp;; les deux se sont améliorés. Dépenser plus à coût unitaire plus bas est un résultat&nbsp;; dépenser plus à efficacité égale n'est qu'un budget plus gros. À noter que les deux bras voyaient de la publicité&nbsp;: cela isole donc notre stratégie par rapport au réglage par défaut de la plateforme et ne dit rien sur le caractère incrémental de la publicité elle-même.</p>
+          <p>En parallèle, nous avons corrigé la façon même dont les audiences parvenaient aux plateformes. Activer un segment signifiait que quelqu'un exportait manuellement une liste de clients et la remettait &mdash; lent, non reproductible, et une véritable exposition de données. Nous l'avons remplacée par un flux normalisé&nbsp;: sélectionner un segment interne par son étiquette sémantique, le pousser sous forme de groupe codé, l'appliquer comme ciblage. Même capacité, aucun des risques, reproductible par n'importe qui.</p>
+          <h2>Ce que j'emporterais vers un autre produit</h2>
+          <p><strong>La spécification est le produit.</strong> Ce que vous déclarez comme succès, ce que vous acceptez comme preuve et qui vous dites au système de chercher déterminent tout ce que l'algorithme fait en votre nom. Ces trois choses arrivent déguisées en configuration, ce qui explique que presque personne ne les traite comme des décisions produit &mdash; et pourquoi les traiter ainsi constitue un tel avantage.</p>
+          <p><strong>Quand la bonne réponse varie d'un cas à l'autre, construisez le mécanisme au lieu de gagner le débat.</strong> Je ne pouvais pas connaître le bon événement de conversion pour chaque plateforme, chaque catégorie et chaque saison. Laisser choisir les gens les plus proches de chaque campagne, et instrumenter leurs choix, valait mieux que n'importe quelle réponse que j'aurais pu défendre.</p>
+        </div>
+
+        <nav class="series-nav" aria-label="Reconstruire la croissance payante">
+          <p class="series-nav__label">Reconstruire la croissance payante &middot; Partie 1 de 4</p>
+          <a class="series-nav__link" href="what-a-customer-cost.html">
+            <span class="series-nav__dir">Suivant &rarr;</span>
+            <span class="series-nav__title">Savoir ce qu'un client coûtait vraiment</span>
+          </a>
+        </nav>
+
+        <hr />
+        <p style="color: var(--ink-soft); font-size: var(--step--1)">
+          Écrit par Leon Sun. Répondez par <a href="mailto:hancocksun@gmail.com">courriel</a> &mdash; je lis tout.
+        </p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap site-footer__inner">
+        <p style="margin: 0">&copy; <span data-year>2026</span> Leon Sun</p>
+        <ul class="social">
+          <li><a href="mailto:hancocksun@gmail.com">Courriel</a></li>
+          <li><a href="https://github.com/Leon-sun" rel="me noopener" target="_blank">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/xiangxin-sun-100bb347" rel="me noopener" target="_blank">LinkedIn</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+  </body>
+</html>

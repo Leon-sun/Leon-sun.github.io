@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>When the Best Search Result Isn't a Result — Leon Sun</title>
+    <meta
+      name="description"
+      content="On an automotive services platform, the best outcome for a large share of search queries was to get the user out of search entirely. The hard part had nothing to do with search technology."
+    />
+    <meta name="color-scheme" content="light dark" />
+
+    <meta property="og:title" content="When the Best Search Result Isn't a Result" />
+    <meta
+      property="og:description"
+      content="Search as a router, not a shelf — and the attribution problem that made it possible."
+    />
+    <meta property="og:type" content="article" />
+
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="alternate" hreflang="en" href="search-as-a-router.html" />
+    <link rel="alternate" hreflang="fr" href="../fr/posts/search-as-a-router.html" />
+    <link rel="icon" href="data:," />
+    <script>
+      try {
+        var t = localStorage.getItem("theme");
+        if (t) document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    </script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="wordmark" href="../index.html">Leon Sun</a>
+
+        <nav class="nav" id="site-nav" aria-label="Primary">
+          <a href="../work.html">Work</a>
+          <a href="../writing.html">Writing</a>
+          <a href="../about.html">About</a>
+        </nav>
+
+        <div class="site-header__actions">
+          <span class="lang-switch">
+            <a href="search-as-a-router.html" aria-current="true" lang="en" hreflang="en">EN</a>
+            <span class="lang-switch__sep" aria-hidden="true">/</span>
+            <a href="../fr/posts/search-as-a-router.html" lang="fr" hreflang="fr">FR</a>
+          </span>
+
+          <a class="icon-link" href="https://github.com/Leon-sun" target="_blank" rel="me noopener" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a>
+          <a class="icon-link" href="https://www.linkedin.com/in/xiangxin-sun-100bb347" target="_blank" rel="me noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
+
+          <button class="theme-toggle" type="button" aria-label="Switch theme" title="Switch theme"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" /></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" /></svg></button>
+
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu" title="Menu"><svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" /></svg><svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" /></svg></button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <article class="article wrap">
+        <a class="back-link" href="../writing.html">&larr; All writing</a>
+
+        <header class="article__header">
+          <p class="article__meta">August 2026 &middot; 14 min read</p>
+          <h1>When the Best Search Result Isn't a Result</h1>
+        </header>
+
+        <div class="article__body">
+          <p>Most e-commerce search teams optimize toward one goal: put the right product in front of the user, faster. Better recall, better ranking, better results page. It's a good goal, and for most catalogs it's the right one.</p>
+
+          <p>From 2018 to 2020 I was the search product manager on the product team at an automotive services platform, and the most useful thing we did was decide that goal was wrong for us &mdash; that for a large share of queries, the best outcome was to get the user <em>out</em> of search entirely.</p>
+
+          <p>That sounds like an admission of failure. It was the opposite, and the hardest part of doing it had nothing to do with search technology.</p>
+
+          <h2>Why the standard playbook didn't fit</h2>
+
+          <p>Three things about the business broke the assumptions e-commerce search is built on.</p>
+
+          <p><strong>It was extremely low frequency.</strong> Registered users outnumbered monthly actives by more than an order of magnitude. On most platforms that ratio is an alarm. Here it was just the shape of the category: nobody shops for tires the way they shop for clothes. You buy when you need to, then you don't think about it for two years. Low engagement wasn't a leak to plug, and any metric that treated it as one would have sent us chasing the wrong thing for a year.</p>
+
+          <p><strong>Purchases were compatibility-gated.</strong> You can't sell someone a tire without knowing their vehicle. A query for a product was never a complete request &mdash; it was half of one. The platform had to know the car before it could answer, which made raw keyword matching structurally incapable of producing a correct result, no matter how well it was tuned.</p>
+
+          <p><strong>The catalog was shallow by design.</strong> We didn't carry forty options in a category. We carried the ones that made sense for a given vehicle. A page with a handful of items doesn't reward the browse-compare-decide behaviour that ranking optimization assumes.</p>
+
+          <p>Meanwhile users arrived with habits formed on general marketplaces. They typed what they wanted and expected a wall of products. The gap between that expectation and what the business could actually deliver was the real problem, and no amount of ranking improvement was going to close it.</p>
+
+          <h2>What we inherited</h2>
+
+          <p>Search had been built as a smaller copy of a general e-commerce engine. Recall was keyword matching with no semantic layer. Ranking was business rules plus historical sales and rating signals &mdash; and in practice, a meaningful share of ordering was decided by people, by hand.</p>
+
+          <p>It wasn't incompetent. It was a reasonable default applied to a business it didn't fit.</p>
+
+          <h2>Search as a router, not a shelf</h2>
+
+          <p>The reframe that reorganized everything: users came to search with a <em>need</em>, and on our platform a need often couldn't be satisfied by a list of products at all.</p>
+
+          <p>Two facts made this concrete. Our tire list page received far more investment than search and was iterated on far more often &mdash; it was simply a better place to buy tires than any results page we could realistically build. And maintenance let users customize what went into a package, an interaction search had no way to reproduce.</p>
+
+          <p>So when someone searched for maintenance, we had two options. Show them maintenance-adjacent products in a generic list, which is what search was built to do. Or recognize that maintenance is a <em>service</em> need and hand them to the flow designed for it.</p>
+
+          <p>We chose the second and generalized it. Search's job became: understand what the user actually needs, then send them to the best surface for that need &mdash; frequently not search.</p>
+
+          <h2>The experiment came first, then the metric</h2>
+
+          <p>I want to be honest about the order, because it isn't the order these stories usually get told in.</p>
+
+          <p>For a long time I was trying to keep users on the results page. That was the goal, and it was less a failure of imagination than a consequence of arithmetic: search was scored on what happened on the results page, so a user leaving it counted as a loss, and every idea I had was some version of making them stay. We sat in that state a good while.</p>
+
+          <p>What broke it was noticing how many queries simply could not be satisfied by a results page at all &mdash; not poorly satisfied, not satisfied &mdash; and proposing we test routing a handful of them somewhere else instead. The tests came back very well. That mattered more than any argument I could have made in a meeting, because it turned a theory into a number.</p>
+
+          <p>It also created an obvious problem. We had just demonstrated that the best thing search could do for a whole class of queries was the thing our own KPI punished. Doing it once was a nice experiment. Doing it systematically was unsustainable while search was still scored on results-page conversion &mdash; under conventional attribution, every redirect is a conversion handed to another team, and at scale you've built a compelling case for cutting your own budget.</p>
+
+          <p>So we took the examples to management and had a long discussion. They accepted the logic, and the examples did most of the work. Search became accountable not for conversion on the results page but for the total output of search users &mdash; conversion rate and GMV generated by anyone who entered through search, wherever they ultimately bought. Once that's the number, routing stops being self-harm. The tire list page converting our traffic better than we could is no longer a threat; it's a resource.</p>
+
+          <p>It's worth being precise about what that change was and wasn't, because &ldquo;team argues for a metric it can hit more easily&rdquo; is a fair thing to suspect. It wasn't search shedding accountability. Routing traffic into someone else's surface only works if that surface is ready to receive it, so the new scope came with an obligation attached: work closely with the teams owning the destinations, and hand them everything we understood about the user's intent so the eventual result was genuinely better. We were widening what search was responsible for, not narrowing it.</p>
+
+          <p>There's a real tension in measuring a search team on revenue, and it's worth naming: revenue targets can be met by routing toward higher-revenue destinations rather than correct ones. The guard against that is holding both metrics at once. You can inflate revenue per session by degrading match quality, but conversion rate will tell on you, because users who land somewhere wrong don't buy. Neither number is safe alone. Together they're reasonably hard to game.</p>
+
+          <p>The generalizable version: <strong>attribution design determines which products are buildable.</strong> A search team scored on results-page conversion will build a shelf, whatever its members privately believe about intent. But the practical lesson isn't &ldquo;change the metric first&rdquo; &mdash; I couldn't have. Nobody hands you a new KPI on the strength of a hypothesis. You change it with evidence: run the small version of the thing your metric punishes, cheap enough that nobody has to bless it as strategy, and let the result make the argument you can't make in a meeting.</p>
+
+          <h2>Three kinds of intent, three different answers</h2>
+
+          <p><strong>Service intents get routed out.</strong> A car wash query stopped returning cleaning products and started returning nearby car wash locations. A paint query stopped returning touch-up pens and started opening the booking flow. In each case the old result set was defensible on keyword relevance and useless on intent.</p>
+
+          <p><strong>Clear product and brand intents get standardized and landed.</strong> A query naming a specific brand and product type is unambiguous &mdash; the user isn't exploring, they know. We stopped treating these as a search problem and treated them as routing with a known destination: collect the required attributes, send the user to the best landing page for that combination.</p>
+
+          <p><strong>Everything else stays, and gets a better page.</strong> Not every query has a confident destination. Queries that stayed in search got a results experience redesigned around what our business could actually answer, rather than a scaled-down copy of a general marketplace.</p>
+
+          <h2>Classifying intent, unexcitingly</h2>
+
+          <p>Routing only works if the set of destinations is finite. A general marketplace can't enumerate what a user might want; the intent space is effectively open. Ours was the opposite &mdash; a handful of core services (tires, maintenance, car wash, paint work) and a bounded set of car-related product categories like floor mats and dash cams. A closed intent space can be handled with a dictionary instead of a model that has to generalize to anything.</p>
+
+          <p>So we built one: a business dictionary tagging terms by entity type &mdash; brand, model, service, product, location, store. Assembled with NLP, then maintained continuously by people. That second half is the unglamorous part and the part that made it work. Automotive vocabulary is full of brand names that are also ordinary words, model numbers that look like typos, and regional slang for the same service. A general-purpose language model handles this badly. A curated domain dictionary handles it well, because someone who knows the domain is curating it.</p>
+
+          <p>Classification then became largely mechanical. Tokenize the query against the dictionary, see which entity types are present, and the combination gives you the intent. A brand plus a product type is a product intent with a known landing page. A service term, alone or with a location, is a service intent that belongs in a booking flow. Semantic matching to the core services was synonym lists inside the dictionary &mdash; not embeddings, nothing clever.</p>
+
+          <p>Ownership shifted over time: people did the curation early, and as the system matured more of it moved to the data science team. A domain taxonomy is a real ongoing cost, and pretending otherwise would misrepresent what running one takes.</p>
+
+          <p>The lesson I'd generalize: <strong>check whether your intent space is closed before reaching for a classifier.</strong> If it is, a maintained domain dictionary beats a model on precision, cost, and &mdash; importantly &mdash; debuggability. When a query routes wrong you can see exactly which term caused it and fix that term the same day. In a system where wrong routing is expensive, that's worth a great deal.</p>
+
+          <h2>Routing costs you your diagnostic</h2>
+
+          <p>Redirecting is an asymmetric bet. A bad search result costs the user a scroll. A bad redirect drops them into a flow they never asked for, and they have to work out what happened and back out of it.</p>
+
+          <p>Worse, routing destroys the instrument you'd normally use to catch it. Click-through was our workhorse signal for queries that stayed in search: high volume plus low CTR meant we were answering wrong. But a routed query never renders a results page. No click, no CTR &mdash; the diagnostic that worked everywhere else is unavailable exactly where the stakes are highest.</p>
+
+          <p>So we changed what we watched. For routed terms we went to conversion, benchmarked two ways. Against the destination's own baseline, as a trigger: if traffic arriving at car wash through a routed query converted below what car wash normally converts, something was wrong with the routing. And against conversion from categorical search, as the finer read on whether routing was actually earning its place. The blunt check tells you something is broken; the comparative one tells you whether the thing is any good.</p>
+
+          <p>Two design choices kept it honest.</p>
+
+          <p>Routing was recoverable rather than final. If a user returned to search from a destination page, we served matching products. The redirect was a strong default, not a locked door &mdash; which matters, because it means a classification error costs the user a detour rather than stranding them.</p>
+
+          <p>And every significant change to the intent dictionary shipped as an A/B test. That one is easy to skip: a taxonomy feels like configuration, a list of terms someone edits, rather than a product change. But editing that list silently reroutes traffic across the entire platform, which makes it among the highest-leverage things anyone on the team can touch. It earned the same release discipline as a feature.</p>
+
+          <h2>The engine underneath</h2>
+
+          <p>None of this works if the system can't tell what a query means, so in parallel we modernized retrieval: proper tokenization, a domain synonym layer for automotive vocabulary that general models handle badly, and typo detection and correction. On ranking we moved from rules toward a personalized model &mdash; while deliberately keeping operating levers for promoted brands, campaigns, and business priorities, because a ranking system the business can't influence at all is a ranking system the business will route around.</p>
+
+          <p>We also worked the parts of the journey that happen before a query exists: placeholder text in the search box, autocomplete suggestions, trending and promoted terms on the pre-search page. On a low-frequency platform where many users lack precise vocabulary for what they need, what you suggest before they type shapes a surprising share of what they type.</p>
+
+          <p>The language capability built here eventually outgrew search. The same dictionary and processing pipeline turned out to be useful for product labelling and for surfacing the most relevant customer reviews per user, and we ended up offering it to other teams as a service. Domain language infrastructure built for one surface is rarely only useful there.</p>
+
+          <h2>The operating rhythm</h2>
+
+          <p>Every release ran as an A/B test, and we reviewed weekly with data science and operations: which queries were underperforming, why, and what to try next. Two backlogs fed that review &mdash; high-frequency queries with low CTR for in-search traffic, and flagged conversion underperformers for routed traffic. Both write themselves, and both surface intent mismatches that aggregate relevance metrics hide completely.</p>
+
+          <p>That cadence mattered more than any individual launch. Search optimization isn't a project you finish. It's an operating rhythm you install.</p>
+
+          <p>Results were strongly positive on conversion and GMV for affected traffic, and the gains concentrated heavily on service intents &mdash; which makes sense, because those were the queries where the old behaviour was most wrong.</p>
+
+          <p>Car wash is the clearest case. The old results page answered that query with cleaning pens and windshield washer fluid, and clicked in the single digits. Replacing it with nearby car wash locations got a large fraction of that traffic to actually book. Those two numbers measure different things &mdash; a click on a listing versus a placed order &mdash; which is exactly the point from the section above: once you route, the old metric stops existing and you have to pick up a new one. But no reading of them is close. The query was never about buying anything. It was about getting the car washed, and for years we answered it with products, because products were what search knew how to return.</p>
+
+          <h2>What I'd carry to another product</h2>
+
+          <p><strong>You win a metric argument with a result, not an argument.</strong> The routing work was technically unremarkable. What made it possible was a KPI that credited search for outcomes it didn't own the last click on &mdash; and I got that KPI by running the experiment first and bringing back numbers, not by making the case in the abstract. The old metric had also quietly shaped what I could think of: I spent a long time optimizing to keep people on a page because that was the number, and the alternative wasn't visible from inside it. Almost every interesting product change I've seen was gated by an incentive rather than a capability, and unlocked by a small result nobody had to approve in advance.</p>
+
+          <p><strong>Search is a distribution surface, not a destination.</strong> Its job is getting users to the best experience for their need. Sometimes that's a results page; often it isn't. Teams that measure search only by what happens on the results page will never discover this, because the instrumentation forecloses the answer.</p>
+
+          <p><strong>Search architecture is downstream of business shape.</strong> Low frequency, compatibility gating and a shallow catalog aren't edge cases to work around &mdash; they're the specification. Copying a general marketplace's search into a business that isn't one imports assumptions that quietly don't hold.</p>
+
+          <p><strong>Your users are already telling you where you're wrong.</strong> High-volume, low-CTR queries are the cheapest product research available, in the users' own words, for free.</p>
+
+          <h2>The part I didn't get to build</h2>
+
+          <p>Low purchase frequency is not low <em>need</em> frequency, and conflating the two is the mistake the whole industry makes about businesses like this one.</p>
+
+          <p>Nobody changes their tires every day. But people pick up a nail. They scrape a bumper in a parking garage. They hear a noise starting up on cold mornings and don't know whether it's serious. Those moments are frequent, they're urgent, and what the person wants in that moment is not a product listing. It's a professional answer from someone who actually knows.</p>
+
+          <p>A platform with real service operations can answer that credibly in a way a general marketplace can't and a forum full of strangers shouldn't. That capability was sitting right there, unused, because search was still framed as a place to buy things rather than a place to ask something.</p>
+
+          <p>Short term, answering those questions sells nothing. That is the entire problem &mdash; and it's the same wall I'd already climbed once, one level up.</p>
+
+          <p>We had won the metric argument to get routing built: search moved from being scored on results-page conversion to being scored on the total output of search users. That change is precisely what made routing rational. It is also precisely what blocks an advice product, because a well-answered question about a nail in a tire produces no attributable transaction inside the measurement window. I had changed the measurement enough to build a router. I hadn't changed it enough to build a relationship.</p>
+
+          <p>I should say plainly that I never had a measurement design for it, and it never got a serious conversation. The company was heading toward an IPO, and executive attention was on revenue and profit &mdash; which is a legitimate thing for a pre-IPO company to care about, not a story about people who didn't get it. But it does mean the idea never reached the stage of being argued down on its merits. It had nothing to say for itself in the only language the room was speaking.</p>
+
+          <p>That's the part I'd do differently. &ldquo;It builds trust and drives engagement&rdquo; is the argument every unmeasurable initiative makes for itself, and it deserves the scepticism it gets. In a low-frequency business the honest measurement window for a trust-building product is longer than the planning cycle &mdash; you'd need a year or more of repeat-purchase behaviour before you knew anything, which is precisely what makes it hard to fund. I didn't have a proposal for how to run that, and not having one is part of why the idea died. Turning up with a conviction and no measurement is how you lose an argument to someone holding a spreadsheet, and they aren't wrong to win it.</p>
+
+          <p>There's a competitive argument too. Routing mechanics turned out to be reasonably copyable; the approach was picked up elsewhere soon enough. A relationship built by being the place people ask when something goes wrong with their car is a much slower thing to copy, because it accrues rather than ships.</p>
+
+          <p>I still think that's the version of the product worth building. Search that sells you something is a feature. Search that tells you what's actually wrong is a business.</p>
+        </div>
+
+        <hr />
+        <p style="color: var(--ink-soft); font-size: var(--step--1)">
+          Written by Leon Sun. Reply by <a href="mailto:hancocksun@gmail.com">email</a> &mdash;
+          I read everything.
+        </p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap site-footer__inner">
+        <p style="margin: 0">&copy; <span data-year>2026</span> Leon Sun</p>
+        <ul class="social">
+          <li><a href="mailto:hancocksun@gmail.com">Email</a></li>
+          <li><a href="https://github.com/Leon-sun" rel="me noopener" target="_blank">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/xiangxin-sun-100bb347" rel="me noopener" target="_blank">LinkedIn</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+  </body>
+</html>
