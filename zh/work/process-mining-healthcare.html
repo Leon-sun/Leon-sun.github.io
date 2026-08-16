@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>对十年诊疗路径做流程挖掘 — Leon Sun</title>
+    <meta name="description" content="从十年、五万多个病例的医院数据中还原真实临床流程，找出瓶颈并仿真政策改动。" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="alternate" hreflang="en" href="../../work/process-mining-healthcare.html" />
+    <link rel="alternate" hreflang="fr" href="../../fr/work/process-mining-healthcare.html" />
+    <link rel="alternate" hreflang="zh-Hans" href="process-mining-healthcare.html" />
+    <link rel="icon" href="data:," />
+    <script>
+      try {
+        var t = localStorage.getItem("theme");
+        if (t) document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    </script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">跳到主要内容</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="wordmark" href="../index.html">Leon Sun</a>
+
+        <nav class="nav" id="site-nav" aria-label="主导航">
+          <a href="../work.html">项目</a>
+          <a href="../writing.html">文章</a>
+          <a href="../about.html">关于</a>
+        </nav>
+
+        <div class="site-header__actions">
+          <span class="lang-switch">
+            <a href="../../work/process-mining-healthcare.html" lang="en" hreflang="en">EN</a>
+            <span class="lang-switch__sep" aria-hidden="true">/</span>
+            <a href="../../fr/work/process-mining-healthcare.html" lang="fr" hreflang="fr">FR</a>
+            <span class="lang-switch__sep" aria-hidden="true">/</span>
+            <a href="process-mining-healthcare.html" aria-current="true" lang="zh-Hans" hreflang="zh-Hans">中文</a>
+          </span>
+          <a class="icon-link" href="https://github.com/Leon-sun" target="_blank" rel="me noopener" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a>
+          <a class="icon-link" href="https://www.linkedin.com/in/xiangxin-sun-100bb347" target="_blank" rel="me noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
+
+          <button class="theme-toggle" type="button" aria-label="切换主题" title="切换主题"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" /></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" /></svg></button>
+
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="菜单" title="菜单"><svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" /></svg><svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" /></svg></button>
+        </div>
+      </div>
+    </header>
+    <main id="main">
+      <article class="article wrap">
+        <a class="back-link" href="../work.html">&larr; 全部项目</a>
+
+        <header class="article__header">
+          <p class="article__meta">渥太华大学与 CHEO &middot; 2025 至今 &middot; 流程分析</p>
+          <h1>对十年诊疗路径做流程挖掘</h1>
+          <p class="hero__lede" style="margin-top: 1.25rem">十年的医院事件数据，五万多个病例，以及一个任何流程图都回答不了的问题：诊疗在这个系统里究竟如何流动，又在哪里卡住？</p>
+        </header>
+
+        <dl class="facts">
+          <div>
+            <dt>机构</dt>
+            <dd>渥太华大学，与 CHEO 合作</dd>
+          </div>
+          <div>
+            <dt>角色</dt>
+            <dd>数据科学家 / 研究助理 —— 流程与运营分析</dd>
+          </div>
+          <div>
+            <dt>数据</dt>
+            <dd>十年，五万多个病例</dd>
+          </div>
+          <div>
+            <dt>方法</dt>
+            <dd>流程挖掘、仿真、指标建模</dd>
+          </div>
+        </dl>
+
+        <div class="article__body">
+          <h2>背景</h2>
+          <p>医院有成文的诊疗路径。医院同样有事件日志——每个病例、跨越数年、关于什么被开立、什么被执行、什么被记录的时间戳。两者从不吻合，而等待时间正是在这个缝隙里累积起来的。</p>
+          <p>这项工作仍在进行中：以下描述的是方法，而不是已完成的结论。</p>
+          <h2>方法</h2>
+          <ul>
+            <li>先向临床与行政相关方收集分析需求——这项分析要支撑哪一个决策，如果答案偏向某一边，又会有什么不同。</li>
+            <li>从事件日志还原真实的流程变体，再与成文路径对比，定位返工回路、交接处的延迟和资源瓶颈。</li>
+            <li>与真正做这件事的人一起验证假设。事件日志记录的是<em>被记录下来</em>的事，未必是发生过的事；两者的差异本身很有信息量，必须核实，而不是抹平。</li>
+            <li>把方法与定义明确写下来，使结论可以被复现和质疑，而不是被照单全收。</li>
+            <li>建立仿真模型，在触及真实病人之前检验拟议的政策改动——排班规则、产能分配。</li>
+          </ul>
+          <h2>为什么这套方法可以迁移</h2>
+          <p>这里没有任何东西是医疗独有的。任何有记录系统的组织都有事件日志，任何有流程图的组织都存在图与日志之间的差距。儿科诊疗只是把「解读正确」的代价抬高了，而这是一种很好的纪律。</p>
+        </div>
+
+        <hr />
+        <p style="color: var(--ink-soft); font-size: var(--step--1)">
+          想看更长的版本，或者那些不适合放在公开页面上的部分？<a href="mailto:hancocksun@gmail.com">给我写信</a>。
+        </p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap site-footer__inner">
+        <p style="margin: 0">&copy; <span data-year>2026</span> Leon Sun</p>
+        <ul class="social">
+          <li><a href="mailto:hancocksun@gmail.com">邮件</a></li>
+          <li><a href="https://github.com/Leon-sun" rel="me noopener" target="_blank">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/xiangxin-sun-100bb347" rel="me noopener" target="_blank">LinkedIn</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+  </body>
+</html>

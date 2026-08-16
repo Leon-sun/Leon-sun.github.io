@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>搞清楚一个客户到底花了多少钱 — Leon Sun</title>
+    <meta name="description" content="花掉整个获客预算的团队看不到一个客户的成本。弥合可见数字与真实数字之间的差距，构成了这项工作的大部分。" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="alternate" hreflang="en" href="../../posts/what-a-customer-cost.html" />
+    <link rel="alternate" hreflang="fr" href="../../fr/posts/what-a-customer-cost.html" />
+    <link rel="alternate" hreflang="zh-Hans" href="what-a-customer-cost.html" />
+    <link rel="icon" href="data:," />
+    <script>
+      try {
+        var t = localStorage.getItem("theme");
+        if (t) document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    </script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">跳到主要内容</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="wordmark" href="../index.html">Leon Sun</a>
+
+        <nav class="nav" id="site-nav" aria-label="主导航">
+          <a href="../work.html">项目</a>
+          <a href="../writing.html">文章</a>
+          <a href="../about.html">关于</a>
+        </nav>
+
+        <div class="site-header__actions">
+          <span class="lang-switch">
+            <a href="../../posts/what-a-customer-cost.html" lang="en" hreflang="en">EN</a>
+            <span class="lang-switch__sep" aria-hidden="true">/</span>
+            <a href="../../fr/posts/what-a-customer-cost.html" lang="fr" hreflang="fr">FR</a>
+            <span class="lang-switch__sep" aria-hidden="true">/</span>
+            <a href="what-a-customer-cost.html" aria-current="true" lang="zh-Hans" hreflang="zh-Hans">中文</a>
+          </span>
+          <a class="icon-link" href="https://github.com/Leon-sun" target="_blank" rel="me noopener" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a>
+          <a class="icon-link" href="https://www.linkedin.com/in/xiangxin-sun-100bb347" target="_blank" rel="me noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
+
+          <button class="theme-toggle" type="button" aria-label="切换主题" title="切换主题"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" /></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" /></svg></button>
+
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="菜单" title="菜单"><svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" /></svg><svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" /></svg></button>
+        </div>
+      </div>
+    </header>
+    <main id="main">
+      <article class="article wrap">
+        <a class="back-link" href="../writing.html">&larr; 全部文章</a>
+
+        <header class="article__header">
+          <p class="article__meta">2026 年 8 月 &middot; 第 2 篇，共 4 篇 &middot; 阅读约 7 分钟</p>
+          <h1>搞清楚一个客户到底花了多少钱</h1>
+          <p class="series-note">这是「重建付费增长」系列的第 2 篇，共 4 篇，关于一个汽车服务平台。</p>
+        </header>
+
+        <div class="article__body">
+          <p>很长一段时间里，花掉我们全部获客预算的那个团队，看不到一个客户要花多少钱。</p>
+          <p>他们并不粗心。他们盯着的是唯一能实时拿到的那个数字，而它恰好是错的那个。这段差距——可见的数字与真正重要的数字之间的差距——最后构成了这项工作的大部分。</p>
+          <p>人们每两年才买一次轮胎，而交易是在实体门店完成的。付费获客是一段没有其他起点的关系的入口。当获客处在这么核心的位置时，知道它的真实成本就不是报表上的锦上添花。</p>
+          <h2>照着可见的数字掌舵</h2>
+          <p>广告平台给你一份实时报表。它告诉你一次曝光多少钱、一次点击多少钱、一个计划跑得多快。它持续更新，而且就在运营人员干活的地方。</p>
+          <p>它无法告诉你的，是最终有没有产生一个付费客户。那件事活在你自己的系统里，滞后好几天，在另一个地方——而在我们这里，还有一部分发生在某人实际动手装轮胎的门店里。</p>
+          <p>于是运营照着前端成本优化，因为前端成本是唯一存在的东西。没有人选择了这样做。这是工具的形状。</p>
+          <p>后果很好陈述，从内部却很难察觉：<strong>一个点击成本非常漂亮的计划，可能是你最差的计划。</strong>便宜的流量之所以便宜是有原因的，而这些原因会在漏斗往下两步的地方显现，那里没有人在看。</p>
+          <h2>归因是一个设计决策，不是一个设置项</h2>
+          <p>在你能算出真实的单客户成本之前，你得先决定哪一笔花费该记在哪一个客户头上。大多数人把这当作配置——选个末次点击，然后往下走。它远没有那么定论。</p>
+          <p>平台并不会给你可比的证据。一条图片广告上报一次<strong>点击</strong>。抖音或快手上的一条视频广告上报一次<strong>三秒播放</strong>——这几乎算不上意图，而且对上报方来说慷慨得很方便。</p>
+          <p>在一条朴素的末次触点规则下，这两者算同一种事件。于是一个周一真的点了图片广告、想了想、周四又恰好刷过三秒视频的用户，转化被记给了视频。规模化之后，这会把预算推向视频，去承接实际由点击驱动的转化——而数据看起来会像是视频很有效。</p>
+          <p>我们沿用了末次触点，遵循当地行业惯例，但做了一处修正：<strong>一次真实点击被赋予比一次三秒播放更长的、可与转化保持关联的窗口。</strong>强意图证据的有效期更长；弱证据很快过期，不再窃取归因。</p>
+          <p>这不是什么巧妙的把戏。这是认真对待一件事：归因编码了你愿意把什么接受为证据，而下游的每一个数字都继承了你的答案。</p>
+          <h2>每个人说的都是不同的语言</h2>
+          <p>下一个障碍很平淡，花了好几个月。</p>
+          <p>每个广告平台都用自己的方式命名——计划、单元、创意、版位——并按自己的口径定义指标。一个平台叫转化的，另一个叫行为。一个按会话计，另一个按天计。</p>
+          <p>这让一个基础到不能再基础的问题——<em>哪个渠道给我们最便宜的新增付费客户</em>——变得无法回答；不是因为缺数据，而是因为缺共同词汇。你没法比较两个由不同利益方、用不同单位量出来的东西。</p>
+          <p>所以我读了各家平台的接口文档，弄清每个字段实际是什么意思，再把一切映射进一套内部语言：一组统一的报表字段，让计划就是计划、转化就是转化，无论来自哪里。成本、曝光、点击、前端转化、后端转化、投资回报、新客——外加那些让分析成为可能的维度，比如用户看到的是哪个 A/B 版本、哪个落地页。之后我与 BI 团队一起在它之上重建了报表。</p>
+          <p>这件事并不光鲜，我起初也抗拒把它当作产品工作。它<em>就是</em>那件产品工作。此后我们做的每一次比较、每一个实验，都依赖这层翻译的存在。</p>
+          <h2>真正必须成立的那条链</h2>
+          <p>真正的难点在这里。</p>
+          <p>要说出「这个具体的付费客户花了我们这么多钱」，你必须把这些连起来：广告点击 → App 用户 → 已下单 → 已支付 → 已服务。五个环节，每一个都是跨越从未被设计来彼此对话的系统的一次关联，而这门生意的最后一步还发生在实体门店里。</p>
+          <p>这里的每一次关联都是一个决策，不是一次查表。点击之后多久，一次 App 安装还算可归因？如果用户注册用的手机号和下单用的不一样怎么办？如果他周二下单、周六才装轮胎——哪一天拥有这次转化？</p>
+          <p>有一个环节弄错了，你不会收到任何报错。你会得到一个自信而错误的数字，然后所有人据此做决策，这比根本没有数字更糟。</p>
+          <h2>把真实的经济账放到人们干活的地方</h2>
+          <p>链条成立、共同语言就位之后，我们终于能造出运营一直缺的那样东西：一个视图，显示花费、一个计划是否已经跑出学习期、平台上报的成本、<strong>真实的新增付费客户成本</strong>，以及投资回报。</p>
+          <p>效果比我预想的更简单。一旦真实的单客户成本和点击成本一样可见、一样及时，人们就不再优化点击成本了。没有人需要被说服。他们赖以掌舵的那个数字，不再是屏幕上唯一的那个了。</p>
+          <h2>我们能确立什么，不能确立什么</h2>
+          <p>更好的度量让你对自己知道什么这件事更诚实，而不是更不诚实。</p>
+          <p>有两件事我们能确立。跨渠道，我们可以比较实际的新增付费客户成本与投资回报——这正是那套共同语言被造出来的目的，也是预算得以分配的依据。而在单一渠道内部，我们可以把转化目标彼此对比并看到真实差异，因为受众、库存和定价大致被held住了。</p>
+          <p>这两者之间的区别值得当心，因为它很容易被模糊。按实际成本比较渠道，告诉你下一块钱该放在哪里。它并不告诉你<em>为什么</em>某个渠道更便宜——如果一个渠道大部分跑深度转化目标、另一个大部分跑浅层目标，两者之间的差异关于目标本身什么也没说，因为其他一切也都不同。分配决策可以基于跨渠道数字。策略结论不行，这正是测试必须发生在渠道内部的原因。</p>
+          <p>实际操作中，这两者像是嵌套的杠杆，而第二个恰恰在第一个受限的地方最重要。分配很少是自由的：商业协议会把你绑定在某个平台的最低消耗上，无论它当下是不是最便宜的，所以「把钱挪到更好的渠道」只在一定范围内可用。当某个渠道的平均成本走高时，你在承诺允许的范围内削减它的预算——然后你手上还剩下它内部的结构。一个渠道可能把大部分花费投在按支付优化的目标上、少部分投在按下单优化的目标上；改变这个比例，会改变平台模型去寻找什么，也会改变实际成本，而一分钱都不需要在渠道之间移动。</p>
+          <p>于是第一篇里的那个洞察在低一层重新出现了。转化事件会分配预算，无论有没有人在管理它。跨渠道，你用钱来分配。渠道内部，当钱是固定的，你用目标来分配。</p>
+          <p>我们没能妥善确立的是<strong>增量性</strong>。我们在大批广告分组上跑了统计功效充分的比较，刻意在这个粒度上做，因为学习期的方差会让任何单个计划的数字失去意义。但两个都受到干预的组之间的比较，只能告诉你哪个配置更好，永远无法告诉你干预是否胜过不干预。我们手上有的东西更粗糙：停止投放时，流量肉眼可见地断崖下跌。这有它的价值——它排除了「付费获客纯粹在收割本来就会到来的需求」这种可能，而这正是针对任何付费渠道随时可用的那项指控。它无法告诉你的，是幅度，以及花费的哪些部分真正在起作用。</p>
+          <p>我们始终没有正经做这件事，原因值得点名，因为这正是大多数公司不做的真实原因：<strong>一个真正的空白对照组，意味着刻意放弃本可以获得的客户。</strong>业务不会接受那种波动，而当获客是公司认识客户的唯一方式时，这个立场并非不合理。方法论上的答案不是去为空白组辩护——而是让它更便宜。地理空白组特别适合一个实体门店网络，因为区域上的分隔让你可以用一个市场的波动、而不是整个季度的波动来买到证据。这是我今天会最先去做的事。</p>
+          <h2>我会带到下一个产品里的东西</h2>
+          <p><strong>度量是一个设计问题，不是一个报表问题。</strong>归因窗口、什么算作证据、哪一次关联拥有一次转化——这些都是有后果的产品决策，而如果没有人刻意去做，它们就会以默认值的形式被做掉。</p>
+          <p><strong>人们优化的是实时可见的东西。</strong>不是重要的东西，也不是别人告诉他们该在意的东西——而是他们干活时屏幕上的那个东西。如果错的那个数字是快的那个，你就会从优秀的人身上无限期地得到错误的行为。修好这一点，胜过再开一次培训。</p>
+          <p><strong>拿供应商的数字和你自己的对一下。</strong>广告平台自报转化，并且在结构上就有动机慷慨归因。把你自己后端的付费客户成本当作基准事实，不是偏执——它是这个数字唯一一个对答案没有利害关系的版本。</p>
+        </div>
+
+        <nav class="series-nav" aria-label="重建付费增长">
+          <p class="series-nav__label">重建付费增长 &middot; 第 2 篇，共 4 篇</p>
+          <a class="series-nav__link" href="programming-the-algorithm.html">
+            <span class="series-nav__dir">&larr; 上一篇</span>
+            <span class="series-nav__title">你买的不是用户，你是在给算法编程</span>
+          </a>
+          <a class="series-nav__link" href="nobody-uses-a-black-box.html">
+            <span class="series-nav__dir">下一篇 &rarr;</span>
+            <span class="series-nav__title">没有人会用一个自己无法追问的系统</span>
+          </a>
+        </nav>
+
+        <hr />
+        <p style="color: var(--ink-soft); font-size: var(--step--1)">
+          由 Leon Sun 撰写。欢迎<a href="mailto:hancocksun@gmail.com">邮件</a>回复——我每封都会读。
+        </p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap site-footer__inner">
+        <p style="margin: 0">&copy; <span data-year>2026</span> Leon Sun</p>
+        <ul class="social">
+          <li><a href="mailto:hancocksun@gmail.com">邮件</a></li>
+          <li><a href="https://github.com/Leon-sun" rel="me noopener" target="_blank">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/xiangxin-sun-100bb347" rel="me noopener" target="_blank">LinkedIn</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+  </body>
+</html>

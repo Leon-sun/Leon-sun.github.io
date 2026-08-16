@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>那些不留下任何产物的工作 — Leon Sun</title>
+    <meta name="description" content="没有哪个功能叫「让三个互不服气的团队一起造出了点东西」，哪怕那正是任何东西得以被造出来的原因。" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="alternate" hreflang="en" href="../../posts/work-that-leaves-no-artifact.html" />
+    <link rel="alternate" hreflang="fr" href="../../fr/posts/work-that-leaves-no-artifact.html" />
+    <link rel="alternate" hreflang="zh-Hans" href="work-that-leaves-no-artifact.html" />
+    <link rel="icon" href="data:," />
+    <script>
+      try {
+        var t = localStorage.getItem("theme");
+        if (t) document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    </script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">跳到主要内容</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="wordmark" href="../index.html">Leon Sun</a>
+
+        <nav class="nav" id="site-nav" aria-label="主导航">
+          <a href="../work.html">项目</a>
+          <a href="../writing.html">文章</a>
+          <a href="../about.html">关于</a>
+        </nav>
+
+        <div class="site-header__actions">
+          <span class="lang-switch">
+            <a href="../../posts/work-that-leaves-no-artifact.html" lang="en" hreflang="en">EN</a>
+            <span class="lang-switch__sep" aria-hidden="true">/</span>
+            <a href="../../fr/posts/work-that-leaves-no-artifact.html" lang="fr" hreflang="fr">FR</a>
+            <span class="lang-switch__sep" aria-hidden="true">/</span>
+            <a href="work-that-leaves-no-artifact.html" aria-current="true" lang="zh-Hans" hreflang="zh-Hans">中文</a>
+          </span>
+          <a class="icon-link" href="https://github.com/Leon-sun" target="_blank" rel="me noopener" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a>
+          <a class="icon-link" href="https://www.linkedin.com/in/xiangxin-sun-100bb347" target="_blank" rel="me noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
+
+          <button class="theme-toggle" type="button" aria-label="切换主题" title="切换主题"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" /></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" /></svg></button>
+
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="菜单" title="菜单"><svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" /></svg><svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" /></svg></button>
+        </div>
+      </div>
+    </header>
+    <main id="main">
+      <article class="article wrap">
+        <a class="back-link" href="../writing.html">&larr; 全部文章</a>
+
+        <header class="article__header">
+          <p class="article__meta">2026 年 8 月 &middot; 第 4 篇，共 4 篇 &middot; 阅读约 5 分钟</p>
+          <h1>那些不留下任何产物的工作</h1>
+          <p class="series-note">这是「重建付费增长」系列的第 4 篇，共 4 篇，关于一个汽车服务平台。</p>
+        </header>
+
+        <div class="article__body">
+          <p>没有哪个功能叫<em>让三个互不服气的团队一起造出了点东西</em>，哪怕那正是任何东西得以被造出来的原因。</p>
+          <p>我在两年增长工作里做的大部分事情，不出现在任何一份发布说明里。它们后来也被证明遵循着同一个模式，而我是事后才认出来的：当两个群体无法合作时，答案从来不是站在他们中间做翻译。而是造出那个让翻译变得不必要的共享对象。</p>
+          <p>人们每两年才买一次轮胎，而交易在实体门店完成。付费获客——每年在几个平台上数千万美元——是公司认识客户的唯一方式。跑这件事牵涉数据科学、广告运营、商品、研发和 BI，而他们彼此之间并不会自然对话。</p>
+          <h2>三个团队，对同一个问题的三种看法</h2>
+          <p>数据科学认为运营团队不懂广告技术。广告团队认为数据科学不懂运营现实。研发严格照着规格造，一点也不多做，因为当没有人决定这东西应该是什么时，研发被要求做的就是这个。</p>
+          <p>每一种看法都对了一部分，这是最没用的那种分歧。所有人都来找我，而有一阵子我做了那件显而易见的事：我做中转。我把运营解释给数据科学、把数据科学解释给运营，把业务意图翻译成给研发的规格，再把答案带回去。</p>
+          <p>它奏效了，它无法规模化，而且它让我成了每一个决策的单点故障。做那个翻译，是一条成为不可或缺的好路子，也是一条成为有用的人的坏路子。</p>
+          <h2>创意的闭环</h2>
+          <p>最清楚的案例发生在广告团队与商品团队之间。</p>
+          <p>广告创意由一拨人设计，创意背后的商品与促销由另一拨人决定，而两边争论的方式，正是人们在没有共同证据时争论的方式——从立场出发，反复地。商品认为某些商品值得更好的推广。广告团队认为某些创意有效。谁也无法向对方展示任何东西。</p>
+          <p>原因是结构性的。创意表现数据死在广告平台内部。你能知道哪条创意拿到了点击，然后就没有了，因为平台完全不知道用户到达你的 App 之后发生了什么。</p>
+          <p>所以我们在各业务单元之间统一了创意元数据，并把它带进我们自己的分析体系，直到内部用户漏斗可以显示是哪条创意带来了每一个用户——以及那个用户随后实际做了什么。看了哪些商品。买没买。价值多少。</p>
+          <p>这一条连接，把那场对话变成了另一种性质的对话。广告团队能看到创意承诺与商品现实在哪里分岔。商品可以读同一份数据、改进自己的方案，再把新的促销想法送回去给广告团队做成投放。它双向运转，而且两边都不再需要我在中间，因为他们现在有了一个可以共同指着看的产物。</p>
+          <p>它还暴露出一件让人难堪、而此前没有人处在能注意到它的位置上的事。不同广告承诺了不同的促销，而它们每一个在下载之后都把用户丢到一个通用的 App 首页。广告里做出的承诺没有活过那次抵达。我们让促销延续进 App 内——测试过，明显为正，全量铺开。那个修复值真金白银，而它多年来一直不可见，不是因为它隐晦，而是因为没有任何单个团队能同时看到它的两端。</p>
+          <h2>砖块，而不是绕路</h2>
+          <p>做这类工作需要在紧急需求的持续压力下活下来，而我只找到了一种最终不会失败的方法。</p>
+          <p>两个显而易见的选项都会输。拒绝战术性工作以保护路线图，你就失去了提需求那些人的信任——他们不再把问题带给你，也就意味着你不再听得到真正的问题。什么都接下来、并且当作一次性的东西造，你就积累债务，永远收敛不到任何地方。</p>
+          <p>我最后落在的做法，是把那件紧急的东西造成一块<strong>砖</strong>——我正在走向的那个架构中的一个组件——同时不停地把这个架构讲出来。跨平台报表层、按计划配置的机制、建议层，全都起源于某个人某一周需要的某样东西。每一个最后都成了这个平台的一块。</p>
+          <p>这与其说关乎自律，不如说关乎排序。几乎任何紧急需求，都可以被造成一个同时也是朝你要去的方向迈出一步的版本，只要你知道那个方向在哪里，并且愿意在它上面多花一点时间。</p>
+          <h2>学着不再当那个答案</h2>
+          <p>同样的原则也适用于人，而我在这件事上看明白得更慢。</p>
+          <p>我手下有初级产品经理和应届生在做这些事，而很长一段时间里我仍然像个一线执行者那样运转。节奏一刻不停，自己把方案交出来更快。我告诉自己我是在帮他们解阻塞。</p>
+          <p>我最终明白的是，微观管理和手把手教，都不会转移「所有权」。<strong>真正造成伤害的是「你随时都在」。</strong>只要一个相关方可以绕过一位初级产品经理、直接从我这里拿到答案，那位产品经理就什么也不拥有——他是在多绕几步执行我的决策，而包括他自己在内的所有人都知道这一点。</p>
+          <p>所以我把整块模块交给他们，然后拒绝接收这些模块内部的任何需求。有人来找我谈他们的模块，我就让他去找那个人。</p>
+          <p>这不是鲁莽。我从风险最低的部分开始，随着他们证明自己扛得住再逐步扩大，而每周一次的评审意味着不会有大事在无人察觉的情况下出问题。真正发生的失败是返工和延期，不是损害——那是我判定值得付的代价。</p>
+          <p>难受的是中间那段。他们会犯错。人们还是照样来找我。在这两件事同时为真的情况下守住那条线，大约两个月，那就是这项工作的全部。之后他们开始独立运转，他们主管的评价反馈很扎实，其中一位在上一个周期评价不佳之后获得了晋升。</p>
+          <h2>那个模式</h2>
+          <p>这些我都没有当作一套方法来规划过。回头看，同一个动作每次都出现了。</p>
+          <p>广告团队和商品团队不需要一个翻译；他们需要一个共享的产物——与真实客户行为连起来的创意——好让他们不用我也能有效地争论。运营和数据科学不需要更好的解释；他们需要模型出现在他们本来就在看的地方。初级产品经理们不需要我更多的时间；他们需要相关方无处可去。</p>
+          <p>每一个案例里，本能都是把自己插进去，因为把自己插进去立刻见效，而且感觉像是领导力。真正有用的，是造出那个让你在这个特定问题上变得不必要的东西，然后不出现。</p>
+          <p>这也是为什么这是这份工作里最难在面试中描述的部分。<strong>当它做得好的时候，证据是你自己从那个环节里消失了。</strong></p>
+        </div>
+
+        <nav class="series-nav" aria-label="重建付费增长">
+          <p class="series-nav__label">重建付费增长 &middot; 第 4 篇，共 4 篇</p>
+          <a class="series-nav__link" href="nobody-uses-a-black-box.html">
+            <span class="series-nav__dir">&larr; 上一篇</span>
+            <span class="series-nav__title">没有人会用一个自己无法追问的系统</span>
+          </a>
+          <a class="series-nav__link" href="programming-the-algorithm.html">
+            <span class="series-nav__dir">&larr; 回到第一篇</span>
+            <span class="series-nav__title">你买的不是用户，你是在给算法编程</span>
+          </a>
+        </nav>
+
+        <hr />
+        <p style="color: var(--ink-soft); font-size: var(--step--1)">
+          由 Leon Sun 撰写。欢迎<a href="mailto:hancocksun@gmail.com">邮件</a>回复——我每封都会读。
+        </p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap site-footer__inner">
+        <p style="margin: 0">&copy; <span data-year>2026</span> Leon Sun</p>
+        <ul class="social">
+          <li><a href="mailto:hancocksun@gmail.com">邮件</a></li>
+          <li><a href="https://github.com/Leon-sun" rel="me noopener" target="_blank">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/xiangxin-sun-100bb347" rel="me noopener" target="_blank">LinkedIn</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+  </body>
+</html>

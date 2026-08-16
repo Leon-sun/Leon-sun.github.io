@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>你买的不是用户，你是在给算法编程 — Leon Sun</title>
+    <meta name="description" content="每年数千万美元的付费获客，而你唯一真正的杠杆，是告诉平台什么算成功。" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="alternate" hreflang="en" href="../../posts/programming-the-algorithm.html" />
+    <link rel="alternate" hreflang="fr" href="../../fr/posts/programming-the-algorithm.html" />
+    <link rel="alternate" hreflang="zh-Hans" href="programming-the-algorithm.html" />
+    <link rel="icon" href="data:," />
+    <script>
+      try {
+        var t = localStorage.getItem("theme");
+        if (t) document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    </script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">跳到主要内容</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="wordmark" href="../index.html">Leon Sun</a>
+
+        <nav class="nav" id="site-nav" aria-label="主导航">
+          <a href="../work.html">项目</a>
+          <a href="../writing.html">文章</a>
+          <a href="../about.html">关于</a>
+        </nav>
+
+        <div class="site-header__actions">
+          <span class="lang-switch">
+            <a href="../../posts/programming-the-algorithm.html" lang="en" hreflang="en">EN</a>
+            <span class="lang-switch__sep" aria-hidden="true">/</span>
+            <a href="../../fr/posts/programming-the-algorithm.html" lang="fr" hreflang="fr">FR</a>
+            <span class="lang-switch__sep" aria-hidden="true">/</span>
+            <a href="programming-the-algorithm.html" aria-current="true" lang="zh-Hans" hreflang="zh-Hans">中文</a>
+          </span>
+          <a class="icon-link" href="https://github.com/Leon-sun" target="_blank" rel="me noopener" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a>
+          <a class="icon-link" href="https://www.linkedin.com/in/xiangxin-sun-100bb347" target="_blank" rel="me noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
+
+          <button class="theme-toggle" type="button" aria-label="切换主题" title="切换主题"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" /></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" /></svg></button>
+
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="菜单" title="菜单"><svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" /></svg><svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" /></svg></button>
+        </div>
+      </div>
+    </header>
+    <main id="main">
+      <article class="article wrap">
+        <a class="back-link" href="../writing.html">&larr; 全部文章</a>
+
+        <header class="article__header">
+          <p class="article__meta">2026 年 8 月 &middot; 第 1 篇，共 4 篇 &middot; 阅读约 7 分钟</p>
+          <h1>你买的不是用户，你是在给算法编程</h1>
+          <p class="series-note">这是「重建付费增长」系列的第 1 篇，共 4 篇，关于一个汽车服务平台。</p>
+        </header>
+
+        <div class="article__body">
+          <p>我刚转到增长时，产品经理的工作是从广告平台拿到接口文档，然后转交给研发。两年后，我负责一笔每年数千万美元的付费获客预算如何分配。</p>
+          <p>这两件事之间的距离，来自一个认识：<strong>我们买的不是媒体资源。我们是在给别人的优化算法编程——而且编得很糟，还不知道自己在做这件事。</strong></p>
+          <p>人们每两年才买一次轮胎，而这笔交易是在实体门店、而不是在屏幕上完成的。公司可以把老客户带回来，却造不出一个首次客户，所以付费获客是一段没有其他起点的关系的入口。</p>
+          <h2>藏在一张对接工单里的决策</h2>
+          <p>跑 OCPX 广告意味着要把转化事件回传给广告平台，好让它的模型朝这些事件优化。从机械层面看这像是管道工程：平台发来开发文档，你转给研发，研发把回调实现掉。</p>
+          <p>以下是没有人说出口的部分。</p>
+          <p>这些平台掌管着定向。它们的模型决定谁看到你的广告、在什么场景下、以什么价格。这些你一样都控制不了。你能控制的——唯一能控制的——是<strong>你告诉它们什么算成功。</strong>回传注册，算法就去找会注册的人。回传已支付订单，它就去找会付钱的人。</p>
+          <p>你是在为一个拥有远比你更好的定向数据的系统书写目标函数。这不是一次接口对接。这就是那个产品决策，而它当时正以一张工单的形式进入我们的待办列表。</p>
+          <h2>同时错在两个方向上</h2>
+          <p>我们当时回传的是下单，理由是我们想要展现出购买意图的用户。它在两个方向上同时失效。</p>
+          <p><strong>大约 40% 的下单从未支付。</strong>也就是说，我们喂给平台模型的样本里，将近一半是假阳性。我们不只是在浪费信号——我们是在主动训练它们的定向去寻找更多「只下单不付钱」的人。算法完全是照着我们的要求在做。</p>
+          <p>而原因根本不在广告系统里。它是下单流程设计上的一个缺陷。一个纯粹的媒介采买者永远发现不了这一点，因为他并不拥有这条漏斗。</p>
+          <p><strong>而且下单这个事件本身太稀疏，学不出东西。</strong>在一门人们每两年才买一次的生意里，购买事件出现得非常稀疏。这些平台需要一串样本流才能让模型稳定下来；样本太少，一个广告计划就会死在学习期里，从来没有变好过。我们有很多计划就是这么死的。</p>
+          <p>而针对第一个问题的显而易见的修法，会让第二个问题更严重。改成已支付订单：信号更干净，也更稀疏。往前挪到注册：逃开了冷启动，却教会模型去找不会买的人。每一个选项都在某一个方向上是错的。</p>
+          <p>底层机制解释了为什么稀疏信号是在竞价里失利，而不只是学得更慢。这类竞价的排序大致按<strong>出价 × 预估转化率</strong>进行。你让平台去预测一件几乎从不发生的事，预估率就很低，于是有效出价很低，于是你拿不到曝光——不是因为你被人出价压过，而是因为你要求这个系统去预测一件它几乎没有证据的事。你的转化事件选择<em>就是</em>你的竞价竞争力。</p>
+          <h2>没有正确答案，而这就是答案</h2>
+          <p>我花时间看数据，更有用的是，看运营的人实际怎么做并追问为什么。他们彼此意见不一。有人坚持事件应该是下单；有人认为只有真实支付才算。</p>
+          <p>两边都对，只是对应着这门生意的不同部分。</p>
+          <p>轮胎是竞争激烈且高度交易化的——客户知道自己要什么，比价，然后买。在那里，下单是一个合理的意图代理。保养是一项服务，而服务需要先有信任才有人下决心；在那个品类里针对即时下单优化，只会找到那些本来就准备好的人，永远建立不起那批多考虑一会儿才会转化的受众。正确答案还会因平台而异。</p>
+          <p>还有一个没人注意到的后果。<strong>一个全局统一的转化事件，会悄悄地在各条业务线之间分配预算</strong>，因为算法会把钱推向转化最快的地方，而不管公司想让什么增长。我们一直在一个配置文件里、以意外的方式做着一个投资组合决策。</p>
+          <h2>造机制，而不是选答案</h2>
+          <p>我本可以选定一个事件然后为它辩护。但既然正确答案确实因平台和品类而异，为任何单一选择辩护，就意味着大部分时候都是错的。</p>
+          <p>所以我造了配置机制：每个广告计划都可以设定自己回传哪个转化事件，而这些选择都被埋点，好让我们知道什么在哪里有效。不同渠道收敛到了不同的目标，20% 到 40% 的计划转到了下文所说的预测转化事件上。</p>
+          <p>更有意思的是这份灵活性被<em>用来</em>做什么。转化目标变成了运营随业务节奏移动的一根杠杆。大促期间流量本来就转化得好，他们就倾向更浅的目标，产生更多转化、买到更多量。要守毛利、或者接到更紧的成本要求时，他们就转向更深的目标——预测模型也跟着调整。这是我没有预料到、也不可能从中央规定出来的用法。</p>
+          <h2>预测信号，而不是等待信号</h2>
+          <p>稀疏问题仍然要解决，而等待真实购买永远解决不了它。</p>
+          <p>我们与数据科学团队一起建了一个模型，识别那些很可能后续会购买的用户，并把这些预测比真实购买更早地回传给平台。信号更密、反馈更快、广告计划能活过学习期。</p>
+          <p>显而易见的风险是：你现在是在用你自己模型的输出去训练平台的模型。预测器一旦有偏，平台就会顺从地去找更多你偏好的那类人，而这又回流进你的训练数据。</p>
+          <p>控制手段是置信度阈值，把它当作一个旋钮而不是一个设置项。放松它换密度、牺牲精度；收紧它则相反。我们一直调到跑预测转化的计划表现与跑真实转化的计划一致为止——判断依据是我们自己后端的新增付费客户成本，而不是平台自报的转化。</p>
+          <p>结果是在新客成本持平的前提下，曝光量提升约 20%。我特意这样表述：说清楚什么被held住了，才让一个数字成为结果，而不是一句吹嘘。</p>
+          <h2>不只说明什么，还要说明是谁</h2>
+          <p>你能指定的最后一样东西，是受众。</p>
+          <p>我们建了一套 RTA 系统——不再整体接受平台的定向，而是用我们自己的第一方数据实时响应每一次竞价机会，决定是否出价、出多少、以及投放哪一条创意。为了在不交出客户数据的前提下做到这一点，我们与平台合作做了联邦建模，让它们能找到与我们相似的用户，而双方都不暴露各自持有的数据。</p>
+          <p>它对温用户最重要：那些注册过、搜索过、看过商品却没有下单的人。我们提高出价把他们带回来，并通过平台自身的 RTA A/B 能力做测试，在流量层面随机分组——一组用我们的定向与出价策略，另一组返回一个普通出价响应，交给平台的优化去做。</p>
+          <p>策略组的转化好了约 25%。它也花了更多钱，而这正是重点。所以真正重要的比较是转化成本与投资回报，而不是转化量，两者都改善了。以更低的单位成本花掉更多钱是一个结果；以同样的效率花掉更多钱只是一笔更大的预算。值得说明的是，两组都看到了广告，所以这只隔离出了我们的策略相对平台默认的效果，并不能说明广告本身是否具有增量。</p>
+          <p>与此同时，我们还修好了受众究竟如何到达平台这件事。激活一个分群曾经意味着某个人手工导出一份客户名单再交出去——慢、不可复现，而且是一次真实的数据暴露。我们把它换成了一条标准流程：按语义标签选中一个内部分群，以编码后的群组推送出去，再作为定向应用。同样的能力，没有那些风险，而且任何人都能重复执行。</p>
+          <h2>我会带到下一个产品里的东西</h2>
+          <p><strong>规格说明就是产品。</strong>你把什么回传为成功、把什么接受为证据、让系统去找谁——这三件事决定了算法代表你做的一切。它们全都伪装成配置出现，这正是几乎没有人把它们当作产品决策的原因——也正是这样做会带来如此大优势的原因。</p>
+          <p><strong>当正确答案因情况而异时，去造机制，而不是去赢辩论。</strong>我不可能知道每个平台、每个品类、每个季节正确的转化事件是什么。让离每个广告计划最近的人来选，并把他们的选择埋点记录下来，胜过我能为之辩护的任何一个答案。</p>
+        </div>
+
+        <nav class="series-nav" aria-label="重建付费增长">
+          <p class="series-nav__label">重建付费增长 &middot; 第 1 篇，共 4 篇</p>
+          <a class="series-nav__link" href="what-a-customer-cost.html">
+            <span class="series-nav__dir">下一篇 &rarr;</span>
+            <span class="series-nav__title">搞清楚一个客户到底花了多少钱</span>
+          </a>
+        </nav>
+
+        <hr />
+        <p style="color: var(--ink-soft); font-size: var(--step--1)">
+          由 Leon Sun 撰写。欢迎<a href="mailto:hancocksun@gmail.com">邮件</a>回复——我每封都会读。
+        </p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap site-footer__inner">
+        <p style="margin: 0">&copy; <span data-year>2026</span> Leon Sun</p>
+        <ul class="social">
+          <li><a href="mailto:hancocksun@gmail.com">邮件</a></li>
+          <li><a href="https://github.com/Leon-sun" rel="me noopener" target="_blank">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/xiangxin-sun-100bb347" rel="me noopener" target="_blank">LinkedIn</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+  </body>
+</html>

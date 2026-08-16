@@ -1,7 +1,8 @@
 # Personal site — Leon Sun
 
 Static HTML/CSS/JS. No build step, no dependencies. Open `index.html` in a
-browser and it works. Bilingual: English at the root, French under `fr/`.
+browser and it works. Trilingual: English at the root, French under `fr/`,
+Simplified Chinese under `zh/`. Live at https://leon-sun.github.io
 
 ## Structure
 
@@ -15,17 +16,24 @@ posts/*.html        One page per post (3 drafts)
 posts/_template.html   Copy this to start a new post
 
 fr/                 Full French mirror — same filenames, same structure
-fr/index.html       fr/work.html  fr/writing.html  fr/about.html
-fr/work/*.html      fr/posts/*.html
+zh/                 Full Simplified Chinese mirror — likewise
+<lang>/index.html   <lang>/work.html  <lang>/writing.html  <lang>/about.html
+<lang>/work/*.html  <lang>/posts/*.html
 
 css/style.css       The entire design system — all tokens at the top
 js/main.js          Theme toggle, active nav, scroll reveals, footer year
 assets/             Images, résumé PDFs
 ```
 
-**The two languages use identical filenames.** `about.html` ↔ `fr/about.html`,
-`work/search-relevance.html` ↔ `fr/work/search-relevance.html`. That is what
-makes the EN/FR switcher and the `hreflang` tags mechanical — keep it that way.
+**All three languages use identical filenames.** `about.html` ↔ `fr/about.html`
+↔ `zh/about.html`. That is what makes the switcher and the `hreflang` tags
+mechanical: every href is derived from the page's own path, so a new page needs
+no per-language link table. Keep it that way.
+
+Chinese typography is scoped under `html[lang="zh-Hans"]` in `css/style.css` —
+Latin faces stay first in each font stack so embedded English (SQL, Power BI)
+keeps the site's Latin type, with looser leading and no negative tracking for
+the CJK text.
 
 ## Adding a post
 
@@ -36,8 +44,8 @@ makes the EN/FR switcher and the `hreflang` tags mechanical — keep it that way
    existing one.
 4. Optionally add the same `<li>` to "Recent writing" on `index.html` and drop
    the oldest.
-5. Repeat in `fr/` with the same filename, or the FR switcher on that page will
-   404.
+5. Repeat in `fr/` and `zh/` with the same filename, or that page's switcher
+   will 404.
 
 ### Adding to the four-part series
 
