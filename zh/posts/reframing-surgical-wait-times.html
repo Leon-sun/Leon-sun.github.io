@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>等待时间不是病人的属性 — Leon Sun</title>
+    <meta name="description" content="最初的问题是如何对手术病例分层。在数据里待久了之后，我认为那是个错的问题——等待是队列的属性，不是病例的属性。" />
+    <meta name="color-scheme" content="light dark" />
+
+    <meta property="og:title" content="等待时间不是病人的属性" />
+    <meta property="og:description" content="最初的问题是如何对手术病例分层。在数据里待久了之后，我认为那是个错的问题——等待是队列的属性，不是病例的属性。" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="zh_CN" />
+
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="alternate" hreflang="en" href="../../posts/reframing-surgical-wait-times.html" />
+    <link rel="alternate" hreflang="fr" href="../../fr/posts/reframing-surgical-wait-times.html" />
+    <link rel="alternate" hreflang="zh-Hans" href="reframing-surgical-wait-times.html" />
+    <link rel="icon" href="data:," />
+    <script>
+      try {
+        var t = localStorage.getItem("theme");
+        if (t) document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    </script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">跳到主要内容</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="wordmark" href="../index.html">Leon Sun</a>
+
+        <nav class="nav" id="site-nav" aria-label="主导航">
+          <a href="../work.html">项目</a>
+          <a href="../writing.html">文章</a>
+          <a href="../about.html">关于</a>
+        </nav>
+
+        <div class="site-header__actions">
+          <span class="lang-switch">
+            <a href="../../posts/reframing-surgical-wait-times.html" lang="en" hreflang="en">EN</a>
+            <span class="lang-switch__sep" aria-hidden="true">/</span>
+            <a href="../../fr/posts/reframing-surgical-wait-times.html" lang="fr" hreflang="fr">FR</a>
+            <span class="lang-switch__sep" aria-hidden="true">/</span>
+            <a href="reframing-surgical-wait-times.html" aria-current="true" lang="zh-Hans" hreflang="zh-Hans">中文</a>
+          </span>
+          <a class="icon-link" href="https://github.com/Leon-sun" target="_blank" rel="me noopener" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a>
+          <a class="icon-link" href="https://www.linkedin.com/in/xiangxin-sun-100bb347" target="_blank" rel="me noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
+
+          <button class="theme-toggle" type="button" aria-label="切换主题" title="切换主题"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" /></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" /></svg></button>
+
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu" title="Menu"><svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" /></svg><svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" /></svg></button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <article class="article wrap">
+        <a class="back-link" href="../writing.html">&larr; 全部文章</a>
+
+        <header class="article__header">
+          <p class="article__meta">2026 年 8 月 &middot; 阅读约 8 分钟</p>
+          <h1>等待时间不是病人的属性</h1>
+        </header>
+
+        <div class="article__body">
+          <p>交到我手上的问题是：我们应该如何对手术病例分层？这是个合理的问题，背后有很长的制度沿革。优先级分档、目标时间窗，一个病例属于这一类还是那一类，决定了对它而言「按时」意味着什么。</p>
+          <p>在数据里待得足够久之后，我开始认为这是个错的问题——或者至少是一个无法在它自己的框架内被回答的问题。<strong>等待时间不是病人的属性。它是队列的属性。</strong></p>
+          <p>这是渥太华大学与 CHEO 正在进行的研究，所以下面写的是论证与方法。数字属于医院，不该由我来公开。</p>
+          <h2>一个优先级分档究竟承诺了什么</h2>
+          <p>一个优先级分档同时编码了两件事：关于紧急程度的临床判断，以及关于目标时间窗的制度承诺。前者是关于病人的陈述。后者是关于系统的陈述。</p>
+          <p>在负荷之下，这两者会分开。同一分档、同一专科、同一个月转诊的两个病例，等待时间可能相差很大——不是因为谁做错了临床判断，而是因为它们进入的系统，在它们到达的那两天处于不同的状态。分档告诉你<em>应该</em>发生什么。关于<em>将会</em>发生什么，它能说的少得出人意料。</p>
+          <p>所以「我们按优先级达标了吗」是一个合格的审计问题，却是一个糟糕的设计问题。它衡量的是那个承诺，而不是使承诺得以兑现或落空的机制。</p>
+          <h2>两个优先级，在两个不同的时刻被赋予</h2>
+          <p>最先让分层这个问题变复杂的，是发现分层不止一种。</p>
+          <p>一个病例带着转诊时赋予的优先级——由外部的人判断这位病人需要多急被看到。它还带着在提出手术申请时赋予的另一个优先级——由外科医生判断这位病人需要多急接受手术。这是不同的判断，在不同的时刻、由不同的人、基于不同的信息做出——后者受益于一次在前者做出时尚未发生的门诊会诊。</p>
+          <p>两者并不是一一对应的，也不该期待它们对应。一个按常规转诊的病例，在有人真正检查过病人之后，可能变成一个紧急的手术申请。一个按紧急转诊的病例，最终可能只需要择期手术，或者根本不需要手术。</p>
+          <p>这不是数据质量问题。这是系统在正常运作。但它意味着「分层」并不是一个可以调优的分类——它至少是两个，而任何挂在单一分档上的等待时间目标，都继承了两者之间的这份模糊。在改进分层之前，你得先说清楚你指的是哪一个，以及计时从哪一刻开始。</p>
+          <h2>它不是一条队列，而是两条耦合的队列</h2>
+          <p>更根本的问题在于，大多数等待时间分析底下的心智模型，是一群人排成一条队等待一项资源。这个模型在这里以四种具体的方式是错的，而每一种都会改变答案。</p>
+          <p><strong>入口是多个的。</strong>病人通过转诊、直接门诊和急诊到达。急诊病例可以直接进入手术队列，也可以先在门诊被稳定下来，然后像其他人一样产生一个手术申请。没有一个可以站在那里计数的单一大门。</p>
+          <p><strong>它不是先进先出。</strong>服务次序由优先级决定，而不是由到达先后决定。今天到达的病例，可能先于一个已经等了三个月的病例被安排手术，而这是正确的。任何以 FIFO 队列为基准校准过的直觉——包括大多数关于「积压意味着什么」的直觉——在这里都不可靠。</p>
+          <p><strong>两条队列是耦合的。</strong>门诊容量限制了手术需求，因为大多数手术申请都是在门诊产生的。而手术又反过来作用于门诊，因为术后随访会回到门诊，与新的初诊争夺同样的诊室和同样的时段。加快手术，会增加门诊的随访需求，而门诊本来就是手术申请的瓶颈。</p>
+          <p><strong>存在跨时间的反馈。</strong>系统这一周消化掉多少，决定了下一周开始时的积压，而积压又决定了它能消化多少。等待时间不是一个可以取平均的静态属性；它是一个与自身历史对抗着运行的过程的产出。</p>
+          <p>还有一件容易被忽略、却影响很大的事：门诊也在服务那些根本不会需要手术的病人。他们不在手术数据集里，却消耗着同样的容量。孤立地建模手术流程，你会系统性地高估可用的余量。</p>
+          <h2>为什么描述性视角回答不了政策问题</h2>
+          <p>以上所有内容都可以从历史数据中描述出来，而把它描述出来确实有用——你正是这样才发现原来的心智模型是错的。</p>
+          <p>但真正值得问的问题是反事实的。如果我们每周把一场门诊从随访挪给初诊，积压会怎样？P1 病人会怎样？失去那个时段的随访病人又会怎样？任何描述性统计都回答不了，因为历史数据里只包含一种政策：当时生效的那一种。</p>
+          <p>这与用结果页转化来考核搜索团队是同一个陷阱。度量体系只能报告被配置成这样的世界。要把一种配置与一种从未存在过的配置相比较，你需要的是机制的模型，而不是结果的汇总。</p>
+          <h2>两种方法，一个闭环</h2>
+          <p>这套方法把两种各自都不充分的技术耦合了起来。</p>
+          <p><strong>流程挖掘提供路径。</strong>从事件日志中，你可以重建一个病例实际经历了什么——门诊、申请、操作与回访的真实序列，包括没有人画出来的返工回路。由此得到的转移概率，扎根于观察到的行为，而不是一份描述意图的成文诊疗路径。</p>
+          <p><strong>离散事件仿真提供动态。</strong>给定按类型与优先级的到达、给定容量、给定真实的排程规则，你可以把队列往前推演，观察积压如何演变。由此得到的是「争用」，而流程挖掘对此毫无概念——一条被挖掘出来的路径告诉你病例从 A 到了 B，却不会告诉你它之所以等待，是因为另外十一个病例先要用 B。</p>
+          <p>两者单独都不成立。流程挖掘纯粹是回溯性的；它能说出等待曾是多少，永远说不出它会是多少。而一个用虚构路径搭起来的队列仿真只是个玩具，复现的是你自己的假设。</p>
+          <p>闭环比其中任何一块都更重要。挖掘出的转移概率为仿真提供参数。真实事件更新系统状态并重新估计这些概率，使模型跟住医院，而不是逐渐漂离。而尤为关键的是，仿真是从<em>当前</em>积压出发的——积压作为状态被带入，而不是从一个空系统开始。一个从零开始的模型，回答的是没有人问过的问题。</p>
+          <h2>它需要支撑的那个决策</h2>
+          <p>真正对得起这份工作的产出，不是对下个季度等待时间的预测。而是对几种你确实可以采纳的政策之间的比较。</p>
+          <p>具体的杠杆是门诊排班模板：每周有多少时段给初诊、多少给术前随访、多少给术后随访。重新分配这个比例，会改变由哪条队列来吸收压力。</p>
+          <p>让这件事有用的约束是：总容量保持不变。「多招几位外科医生」这样的建议很容易产生，本季度却不可能执行。「每周挪两个时段」这样的建议，是这栋楼里的某个人真的能做的决定。</p>
+          <p>而这个取舍必须被展示出来，不能被藏起来。更多的初诊容量会减少系统前端的积压累积，代价由等待随访的人承担。这个交换是否可以接受，是一个临床与伦理判断，不是一个建模判断。模型的职责，是把这个兑换率摆到桌面上，让有资格做这个决定的人睁着眼睛去做。</p>
+          <h2>诚实的边界</h2>
+          <p>这是一个原型，不是一套已部署的系统，我想把尚未确立的部分说清楚。</p>
+          <p>事件日志记录的是被记录下来的东西。文书的时间戳不是诊疗的时间戳，而这个偏差不是随机的。</p>
+          <p>仿真的到达假设了某种分布形式。它会一直成立，直到有什么东西打破它——而疫情暴发、人力冲击和政策变动，恰恰是模型的答案最有价值的那些情形。</p>
+          <p>验证才是真正困难的部分。复现历史是必要的，却远远不够——一个模型可以很好地拟合过去，却在反事实上是错的，而反事实是你使用它的唯一目的。我不认为这个问题在这里已经被解决。</p>
+          <p>而且这项工作的任何产出，都不会在没有临床签字的情况下变成排程改动。模型让一个取舍变得明确；它没有资格替人接受这个取舍。</p>
+          <h2>可以推广的部分</h2>
+          <p><strong>检查你的分析单元是病例还是系统。</strong>大量运营分析把本质上由病例之间的争用所产生的结果，归因到了单个病例身上。如果同一个病例会因为那一周还来了别的什么而得到不同的结果，那么病例就不是那个单元。</p>
+          <p><strong>在两个时刻做出的两次分类，是两个变量。</strong>不是同一个变量测了两次。把它们合并，恰恰丢掉了「判断如何随证据到来而改变」这一信息。</p>
+          <p><strong>把容量固定住，建议才变得可执行。</strong>值得问的问题几乎从来不是「有更多资源我们会做什么」。而是「现有的东西，怎么排布最好」。后者更难建模，也远更容易被采纳。</p>
+          <p><strong>一个模型靠让取舍变得明确来赢得位置，而不是靠给出一个数字。</strong>数字招来的是关于数字的争论。取舍招来的是一个决定。</p>
+        </div>
+
+        <hr />
+        <p style="color: var(--ink-soft); font-size: var(--step--1)">
+          由 Leon Sun 撰写。欢迎<a href="mailto:hancocksun@gmail.com">邮件</a>回复——我每封都会读。
+        </p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap site-footer__inner">
+        <p style="margin: 0">&copy; <span data-year>2026</span> Leon Sun</p>
+        <ul class="social">
+          <li><a href="mailto:hancocksun@gmail.com">邮件</a></li>
+          <li><a href="https://github.com/Leon-sun" rel="me noopener" target="_blank">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/xiangxin-sun-100bb347" rel="me noopener" target="_blank">LinkedIn</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+  </body>
+</html>
